@@ -47,5 +47,46 @@
     </label>
     <!--es buena practica agregar un for="x" al label más un id="x" para accesibilidad universal.-->
 
+    -casillas de seleccion en formulario
+    <label for="loving">
+        <input id="loving" type="checkbox" name="personality"> Loving</label>
+    <label for="loving">
+        <input id="loving" type="checkbox" name="personality"> Loving</label>
+    <label for="loving">
+        <input id="loving" type="checkbox" name="personality"> Loving</label>
+    <!--tres casillas de verificación para formulario-->
+
+    -forma correcta de estructurar el formulario 
+        <form action="https://www.freecatphotoapp.com/submit-cat-photo">
+            <label for="indoor">
+                <input id="indoor" value="indoor" type="radio"name="indoor-outdoor"> 
+                    Indoor
+            </label>
+            <label for="outdoor">
+                <input id="outdoor" value="outdoor" type="radio"name="indoor-outdoor"> 
+                Outdoor
+            </label>
+        <br>            <!--br es un salto de linea(como un enter)-->
+            <label for="loving">
+                <input id="loving" value="loving" type="checkbox"name="personality"> 
+                Loving
+            </label>
+            <label for="lazy">
+                <input id="lazy" value="lazy" type="checkbox" name="personality"> Lazy
+            </label>
+            <label for="energetic">
+                <input id="energetic" value="energetic" type="checkbox" name="personality"> 
+                Energetic
+            </label>
+        <br>
+            <input type="text" placeholder="cat photo URL" required>
+            <button type="submit">Submit</button>
+        </form>
+      <!-- importante mencionar el atributo value+el nombre del input, por que si no se da este atributo, mandara como respuesta un on que es la respuesta por defecto a los formulario. eso no nos sirbe para nada. -->
+
+    -marcar de forma predeterminada (para hacerlo más expedito)
+    <input type="radio" name="test-name" checked>
+    <!-- el atributo checked le da la predeterminacion al input escojido, es buena practica dejar predeterminado las primeras opciones de cada seccion. -->    
+
     </body>
 </html>
