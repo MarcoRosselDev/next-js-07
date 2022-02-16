@@ -10,6 +10,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
-    <body>
+    <body>  <h1>Basic css(44 clases)</h1>
+
+        Cambiar el color de un h1 desde html 
+        <h2 style="color: blue;">CatPhotoApp</h2>
+        <!--style="color:x color;" x puede ser numeral o verbal-->
+
+        <!--es buena practica crear un styles en el head para los estilos-->
+
+        -Cambiar el tamaño de fuente de un texto
+        <style>
+            h1 {
+                font-size: 25px;
+                }
+        </style>
+
+        -Cambiar la familia de fuente de un texto
+        <style>
+            p {
+                font-family: monospace;
+            }
+        </style>
+
+        -Para determinar el ancho de una imagen
+        <style>
+            .larger-image {
+              width: 500px;
+            }
+        </style>
+
+        -Agregar bordes alrededor de un elemento X 
+        <style>
+            .thin-red-border {
+              border-color: red;
+              border-width: 5px;
+              border-style: solid;
+              border-radius: 5px;
+            }
+        </style>
+        <!--independiente de lo que sea le dara un color rojo al perimetro del area de 5 px solido.-->
+
+        -para redondear o convertir en circulo
+        <style>
+            .smaller-image {
+                width: 100px;
+                border-radius:50%;
+            }
+        </style>    <!--podemos aplicar el % para convertir en circulo x imagen o fondo.-->
+        
+        -dar color de fondo
+        <style>
+            .green-background {
+                background-color: green;
+            }
+        </style>
+
+        -conflictos, importancias en css
+        <style>
+            #cat-photo-element {
+                background-color: green;
+            }       
+        </style>    <!--el id es más especifico que class (importancia), por lo que si se le aplican x regla a un mismo elemento "ganara" el id-->
+
+        
     </body>
 </html>

@@ -4,3 +4,9 @@
     background-color: rgb(49, 47, 47);
     color: rgb(149, 195, 255);
 }
+.thin-red-border {
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 5px;
+  }
