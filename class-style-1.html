@@ -129,5 +129,68 @@
 
     <!--line-height determina el espaciado entre lineas.-->  
 
+    -ajustar el estado de desplazamiento de una etiqueta de ancla
+    <style>
+        a:hover {
+             color: red;
+        }
+    </style>
+
+    <!--a:hover significa que cuando el curzor pase sobre el ancal a se cambiara de color a red(por defecto es negro)-->
+
+    -cambiar la posicion relativa de un elemento 
+    <style>
+        p {
+            position: relative;
+            bottom: 10px;
+        }
+    </style>
+ 
+    <!-- para moverlo donde sea respetando su lugar actual
+    
+    primero y más importante es   position: relative;
+
+                luego pueden ir cualquier posicionamiento como
+                
+                bottom:;
+                top:;
+                left:;
+                right:;
+    
+            importante mencionar que estos movimientos del elemento son contrarios a las direcciones,
+        
+            es decir si le doy          top: 15px;
+            no se movera hacia arriba 
+            15 px si no que se movera
+            15 px hacia abajo.-->
+
+    -bloquear un elemento con position absolute
+    <style>
+        #whrever {
+            position:absolute;
+            top:50px;
+            right:50px;
+        }
+    </style>
+
+    <!-- se bloqueara posicionandoce fijo respecto al elemento contenedor (padre),
+    
+            los demas elementos lo ignoraran.-->
+            
+    -bloquear un elemento incluso en el navegador
+    <style>
+        #navbar{
+            position:fixed;
+            top:0;
+            left:0;
+        }
+    </style>   
+
+    <!-- es como una barra de navegacion fija, si me desplaso havia abajo en la pagina esta seguira ahi,
+    
+    a diferencia de absolut es que absolut es fija solo en relacion con sus elementos circundantes.-->
+
+    -empujar elementos hacia la izquierda o hacia la derecha con la propiedad float
+    
     </body>
 </html>
