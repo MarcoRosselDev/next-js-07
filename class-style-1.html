@@ -191,6 +191,79 @@
     a diferencia de absolut es que absolut es fija solo en relacion con sus elementos circundantes.-->
 
     -empujar elementos hacia la izquierda o hacia la derecha con la propiedad float
-    
+    <head>
+        <style>
+            #left {
+                float:left;
+                width: 30%;
+            }
+            #right {
+                float:right;
+                width: 20%;
+            }
+            aside, section {
+                padding: 2px;
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+        <body>
+            <header>
+                <h1>Welcome!</h1>   
+            </header>
+            <section id="left">
+                <h2>Content</h2>
+                <p>Good stuff</p>
+            </section>
+            <aside id="right">
+                <h2>Sidebar</h2>
+                <p>Links</p>
+            </aside>
+        </body>   
+      
+        <!-- la propiedad float los empareja horizontalmente respecto al contenedor.-->
     </body>
+
+    -cambiar la posicion de los elementos superpuestos
+    (z-index)
+    <style>
+        div {
+          width: 60%;
+          height: 200px;
+          margin-top: 20px;
+        }
+      
+        .first {
+          background-color: red;
+          position: absolute;
+          z-index:1;
+        }
+        .second {
+          background-color: blue;
+          position: absolute;
+          left: 40px;
+          top: 50px;
+          z-index: 2;
+        }
+      </style>
+      
+      <div class="first"></div>
+      <div class="second"></div>
+
+    <!-- z-index acepta numeros enteros cualesquiera, se sobrepondra el elemento con el numero más alto. -->
+
+    -centrar un elemento (margin)
+    <style>
+        div {
+          background-color: blue;
+          height: 100px;
+          width: 100px;
+          margin:auto;
+        }
+    </style>
+    <div></div>
+
+    <!-- margin auto centrara elementos o imagenes. -->
+
+    
 </html>
