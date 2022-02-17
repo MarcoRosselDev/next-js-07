@@ -47,6 +47,87 @@
     <hr>            <!--hr es una linea horizontal-->   
     <br>            <!--es un salto de linea-->
     
+    -asignarle color de fondo más transparencia
+    <style>
+        h4 {
+            text-align: center;
+            padding:10px;
+            background-color: rgba(45, 45, 45, 0.1) 
+        }
+    </style>    
     
+    <!--la a de rgba es la opacidad y se mide de 0 a 1. entonces 0.5 es una transparencia del 50%.-->
+
+    -sombra de tarjeta (box-shadow)
+    <style>
+        #thumbnail{
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+    </style>    <!--se aplican barias sombras a la vez en el siguiente orden
+    
+    offset-x(hasta dónde empujar la sombra horizontalmente desde el elemento),
+    offset-y(hasta dónde empujar la sombra verticalmente desde el elemento),
+    blur-radius,
+    spread-radiusy
+    color, en ese orden.
+
+    ojito con el # id , no se si puede ser una class? -->
+
+    -opacidad en cualesquier elemento 
+
+    <!--podemos hacer transparente cualquier cosa, imagenes, texto, colores de fondo
+    
+    usando--  opacity:0.7;
+    
+    en las reglas de css de algun id o class.-->
+
+    -convertir el texto en mayuscula
+
+    <style>
+        h1{
+            text-align: center;
+            background-color: grey;
+            padding: 10px;
+            font-size: 27px;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <!--en este caso uppercase = mayusculas
+                    lowercase   =   minuscul
+
+                    capitalize  =   Normal pero con mayuscula en la primera letra
+
+                    initial     =   valor predeterminado
+
+                    inherit     =   valor del elemento principal
+
+                    none        =   predeterminado (usara el texto original)        -->
+
+    -establezer el tamaño del texto desde styles   
+    <style>
+        h1{font-size:68px;}
+        h2{font-size:52px;}
+        h3{font-size:40px;}
+        h4{font-size:32px;}
+        h5{font-size:21px;}
+        h6{font-size:14px;}
+    </style>
+
+    <!--con el fin de establecer coherencia visual en todo el proyecto se recomienda establcerlo desde el principo.-->
+
+    -separacion de las lineas de texto
+    <style>
+        p {
+          font-size: 16px;
+          line-height:25px;
+        }
+      </style>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      </p>
+
+    <!--line-height determina el espaciado entre lineas.-->  
+
     </body>
 </html>
