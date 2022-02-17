@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h1>clase 5</h1>
+
+        -selectores de atributos
+        <style>
+            [type='radio'] {
+                margin: 20px 0px 20px 0px;
+            }
+        </style>    <!--interezante forma de darle estilos sin class o id.-->
+
+        -unideades de medida
+        <style>
+            .red-box {
+                background-color: red;
+                margin: 20px 40px 20px 40px;
+                padding:1.5em;
+            }
+        </style>    <!--1.5em es la unidad relativa al contenedor, se diferencia de rem por que rem es relaivo a todo el html (em hereda los atributos del padre)-->
+
+        -heredad de atributos
+        <style>
+            body {
+              background-color: black;
+              font-family:monospace;
+              color:green;
+            }
+        </style>    
+        <h1>hello world</h1>    <!--
+            
+            como a body se le dio un 
+            font-family:monospace; y un color:green;
+        
+        cuando escribamos un h1 o p heredara estos atributos (color verde de texto y monospace de familia de fuente)
+        a menos que se especifique despues otros stylas.    -->
+
+        -conflictos en class
+        <style>
+            body {
+              background-color: black;
+              font-family: monospace;
+              color: green;
+            }
+            .pink-text {
+              color: pink;
+            }
+            .blue-text{
+              color:blue;
+            }
+        </style>
+            <h1 class="pink-text blue-text">Hello World!</h1>
+
+        <!--ciando se dan estos casos gana la class que se escriba al final
+        
+        class="class1 class2"
+    
+        en este ejemplo ganaria la propiedad de la class2-->
+
+        -orden de prioridad (id atributo anula a todos independinte de dinde este)
+
+        <style>
+            body {
+              background-color: black;
+              font-family: monospace;
+              color: green;
+            }
+            .pink-text {
+              color: pink;
+            }
+            .blue-text {
+              color: blue;
+            }
+            #orange-text{
+              color:orange;
+            }
+        </style>
+          <h1 class="pink-text blue-text" id="orange-text">Hello World!</h1>
+
+        <!--en este cado gana in (naranjo), 
+            luego sigue class final(azul), 
+            luego la primera class(pink), 
+            lego estan los styles de  body(verde).-->
+
+        -styles en linea le ganan a todos 
+        <h1 style="color: green;"></h1>
+        <!--en el caso de que este en el ejemplo anterior este les ganaria a todos.-->
+
+        -!important(el más poderoso)
+        <!--finalmente si se agrega !important sera este el que ganara a cualquiera.
+        
+        .blue-text{
+            color:blue !important;
+        }       -->
+
+        -variables
+        <style>
+            .wherever{
+                --wherever-think:pink;
+            }
+            .other-class{
+                background-color: var(--wherever-think, blue);
+            }
+        </style>    <!--las variables sirven para en un futuro cambiar x regla en todo el proyecto con más facilidad.
+        
+        el ,blue es opcional en caso de que el navegador no encuentre su variable mostrara el color por defecto que en este caso es blue.-->
+
+        -estudiar adam smith(filosofo, economista)
+
+        -compativilidad con navegadores antiguos
+        <style>
+            .red-box {
+                background:red;
+                background: var(--red-color);
+                height: 200px;
+                width:200px;
+  }
+        </style>    
+        
+        <!--agregar un backgroun:red; antes de la variabel para navegadores viejitos, los nuevos solo tomaran la variables o el ordeb (recirdar que el orden es en cascada de abajo hacia arriba).-->
+
+        -como crear variables de forma correcta
+        <style>
+            :root{
+                --first-think:pink;
+                --second-think:lightblue;
+            }
+            p{
+                color: var(--second-think);
+            }
+        </style>
+  
+        <!--en resumen se agregan en :root-->
+
+        -cambiar la variable dentro de otra 
+        <style>
+            :root {
+                --penguin-skin: gray;
+                --penguin-belly: pink;
+                --penguin-beak: orange;
+            }
+            body {
+                background: var(--penguin-belly, #c6faf1);
+            }
+            .class-example {
+                --penguin-belly: white;
+            }
+        </style>
+        
+        <!--en este ejemplo tenemos las variables en el root luego lo aplicamos al body(var pink).
+        luego cambiamos la variable dentro de una class específica a blanco.-->
+
+        -uso de media query(cambia dependiendo del tamaño)
+        <style>
+            :root{
+                --penguin-size:300px;
+            }
+            @media (max-width: 350px){
+                :root{
+                    --penguin-size:200px;
+                }
+            }
+        </style>
+        
+        <!--esto le dice que cambie de tamaño (de 300px a 200px)
+        si es que el width es maximo 350.
+    
+        osea que si la pantalla es menor a 350 sera 200
+        pero si es mayor a 350 sera 300px-->
+
+    
+    </body>
+</html>
