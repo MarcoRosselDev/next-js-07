@@ -14,7 +14,7 @@
 
         -crear un degradado linal 
         <style>
-            .first {
+            .werever {
               border-radius: 20px;
               width: 70%;
               height: 200px;
@@ -25,7 +25,7 @@
           
         </style>
           
-        <div class="first"></div>
+        <div class="werever"></div>
         <!-- linear-gradient tiene el siguiente orden
             
                     ( direccion de la gradiante)
@@ -219,17 +219,41 @@
           }
         
           #rect {
-            animation-name: rainbow;
-            animation-duration: 8s ;
+            animation-name: rainbow;         /*nombre para la llave*/
+            animation-duration: 8s ;         /*duracion de la animacion*/
           }
           
-          @keyframes rainbow{
-            0% {background-color: pink;}
+          @keyframes rainbow{                    /*uso del nombre de llave*/
+             0% {background-color: pink;}      /*puede ser cualesquier % */
             50%{background-color:yellowgreen;}
             100% {background-color:lightblue;}
           }
         </style>
         <div id="rect" class="prub"></div>
+
+
+        -animar un boton cuando pasa el curzor
+
+        <style>
+          img {
+            width: 30px;
+          }
+          img:hover {
+            animation-name: width;
+            animation-duration: 500ms;
+          }
+        
+          @keyframes width {
+            100% {
+              width: 40px;
+            }
+          }
+        </style>
+        
+        <img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Logo de google" />
+
+
+        -
 
 
     </body>
