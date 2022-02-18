@@ -11,6 +11,58 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        
+
+        -crear un degradado linal 
+        <style>
+            .first {
+              border-radius: 20px;
+              width: 70%;
+              height: 200px;
+              margin: 50px auto;
+              background:linear-gradient(35deg, #CCFFFF,   #FFCCCC);
+              box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+          
+        </style>
+          
+        <div class="first"></div>
+        <!-- linear-gradient tiene el siguiente orden
+            
+                    ( direccion de la gradiante)
+                    (color 1)
+                    (color 2)
+                    (color ...x)
+                
+                -->
+        -crear un elemento rayado 
+        <style>
+
+            .second {
+            border-radius: 20px;
+            width: 70%;
+            height: 200px;
+            margin:  50px auto;
+            background:         repeating-linear-gradient(
+            45deg,
+            yellow 0px,
+            yellow 40px,
+            black 40px,
+            black 80px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+      
+        </style>
+      
+        <div class="second"></div>
+
+        <!-- funciona igual que el degradado lineal pero se incorporan las repeticiones y en que cuantos px.-->
+
+        -agregar una imagen de fondo como textura
+        <style>
+            body {
+              background:url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png);
+            }
+          </style>
+
     </body>
 </html>
