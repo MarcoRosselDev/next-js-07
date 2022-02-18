@@ -234,7 +234,7 @@
 
         -animar un boton cuando pasa el curzor
 
-        <style>
+        <style>   /*cambia el width (tamaño) */
           img {
             width: 30px;
           }
@@ -253,8 +253,113 @@
         <img src="https://cdn.freecodecamp.org/curriculum/applied-visual-design/google-logo.png" alt="Logo de google" />
 
 
-        -
+        <style>   /*cambia el color de fondo*/
+          button {
+            border-radius: 5px;
+            color: white;
+            background-color: #0F5897;
+            padding: 5px 10px 8px 10px;
+          }
+        
+          button:hover {
+            animation-name: background-color;
+            animation-duration: 500ms;
+          }
+        @keyframes background-color{
+            100%{background-color:#4791d0;}
+        }
+        
+        </style>
+        
+        <button>Register</button>
 
+      -modificar el cambio de color a permanente 
 
+      <!-- lo mismo que el ejemplo anterior pero agregar una regla más
+      
+      
+          button:hover {
+            animation-name: background-color;
+            animation-duration: 500ms;
+            animation-fill-mode: forwards;
+          
+          
+                    animation-fill-mode: forwards;
+                  
+                    esta regla dejara permanente el cambio en el color de la animacion aplicada en el elemento.-->
+
+      - crear movimiento con animacion css 
+
+      <style>
+        .ex-moving {
+          height: 40px;
+          width: 70%;
+          background: black;
+          margin: 50px auto;
+          border-radius: 5px;
+          position: relative;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+      
+        #example {
+          animation-name: example;
+          animation-duration: 4s;
+        }
+      
+        @keyframes example {
+          0% {
+            background-color: blue;
+            top: 0px;
+            left: 0;
+          }
+          50% {
+            background-color: green;
+            top: 50px;
+            left: 25px;
+          }
+          100% {
+            background-color: yellow;
+            top: 0px;
+            left: -25px;
+          }
+        }
+      </style>
+      
+      <div id="example" class="ex-moving"></div>
+      
+      <!-- se puede aplicar en left, rigth, bottom, top. -->
+
+      -crear direccion visual al desvanecer un elemento de izquierda a derecha
+
+      <style>
+
+        #ball-2 {
+          width: 70px;
+          height: 70px;
+          margin: 50px auto;
+          position: absolute;
+          left: 20%;
+          border-radius: 50%;
+          background: linear-gradient(
+            35deg, 
+            #ccffff,  
+            #ffcccc
+          );
+          animation-name: fade;
+          animation-duration: 6s;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+          animation-iteration-count: 3;
+        }
+        /* para que itere infinitamente agragamos el animation-iteration-count: 3; */
+        @keyframes fade {
+          50% {
+            left: 80%;
+            opacity:0.1;
+          }
+        }
+      
+      </style>
+      
+      <div id="ball-2"></div>
     </body>
 </html>
