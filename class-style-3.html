@@ -113,4 +113,59 @@
       <div class="balls-2" id="blue"></div>
       <div class="balls-2" id="green"></div>
 </body>
+
+    -consulta de medios (@media)
+
+    <style>
+        p {                                
+          font-size: 20px;
+        }
+        @media (max-height: 800px)
+    
+        /*media acepta max,min.height,width
+        para preguntar el tamaño de la pantalla.*/
+
+        { 
+          p{
+            font-size:10px;
+          }
+        }
+      </style>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla..</p>
+
+    -conservar la proporción de una imagen
+    
+    <!-- solo agregar       max-width: 100%;
+                            height: auto;
+                        
+                    a las reglas de la imagen 
+                    en el caso de que lo quiera fijo independiente del responsib 
+                
+                agregar width: x px ;-->
+
+
+
+    -diceñar para pantallas de alta retina
+    
+    <!-- debido al avance en la tecnología de las pantallas
+        si una imagen es de 500 x 500 px 
+    
+        se debe definir el width and height en 250 px
+    
+    para que no se vea pixeleado.-->
+
+    -tipografia receptiva
+
+    <!-- Las cuatro unidades diferentes de ventana gráfica son:
+
+            vw(ancho de la ventana gráfica): 10vwsería el 10% del ancho de la ventana gráfica.
+
+            vh(altura de la ventana gráfica): 3vhsería el 3% de la altura de la ventana gráfica.
+
+            vmin(mínimo de ventana gráfica): 70vminsería el 70% de la dimensión más pequeña de la ventana gráfica (alto o ancho).
+
+            vmax(máximo de la ventana gráfica): 100vmaxsería el 100% de la dimensión más grande de la ventana gráfica (alto o ancho).
+        
+    creo que se puede aplicar a elementos.-->
 </html>
