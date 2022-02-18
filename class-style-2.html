@@ -167,5 +167,70 @@
           </style>
           <div class="center"></div>    
         
+        -dibujando un corazon
+
+        <style>
+          .heart {
+            position: fixed;/*podemos dejar esto en absolut */
+            margin: auto;/* para que se quede en un lugar fijo */
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: pink;
+            height: 50px;
+            width: 50px;
+            transform: rotate(-45deg);
+          }
+          .heart::after {
+            background-color: pink;
+            content: "";
+            border-radius: 50%;
+            position: fixed;/*podemos dejar esto en absolut */
+            width: 50px;/* para que se quede en un lugar fijo */
+            height: 50px;
+            top: 0px;
+            left: 25px;
+          }
+          .heart::before {
+            content: "";
+            background-color: pink;
+            border-radius: 50%;
+            position: fixed; /*podemos dejar esto en absolut */
+             width: 50px;/* para que se quede en un lugar fijo */
+            height: 50px;
+            top: -25px;
+            left: 0px;
+          }
+        </style>
+        <div class="heart"></div>
+
+        -animacion de colores de fondo
+        (@keyframes)
+
+        <style>
+          .prub {
+            position: ;
+            height: 40px;
+            width: 50%;
+            background: black;
+            margin: 50px auto;
+            border-radius: 5px;
+          }
+        
+          #rect {
+            animation-name: rainbow;
+            animation-duration: 8s ;
+          }
+          
+          @keyframes rainbow{
+            0% {background-color: pink;}
+            50%{background-color:yellowgreen;}
+            100% {background-color:lightblue;}
+          }
+        </style>
+        <div id="rect" class="prub"></div>
+
+
     </body>
 </html>
