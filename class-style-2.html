@@ -64,5 +64,108 @@
             }
           </style>
 
+        <!-- la background propiedad acepta url para incorporar imagenes o texturas en formato img -->
+
+        -escalar elementos para cambiar su tamaño 
+        (transform: scale(2.5);)
+
+        <!-- al aplicarle 2.5 se agranda cualquier elemento que tenga esta regla -->
+
+        <style>
+            .ball {
+              width: 40px;
+              height: 40px;
+              margin: 50 auto;
+              /* position: fixed; */
+              background: linear-gradient(
+                35deg,
+                #ccffff,
+                #ffcccc
+              );
+              border-radius: 50%;
+              box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+            .ball:hover{
+                transform: scale(1.1);
+            }
+            #ball1 {
+              left: 20%;
+            }
+            #ball2 {
+              left: 75%;
+              transform:scale();
+            }
+            
+          
+          
+        </style>
+          
+          <div class="ball" id= "ball1"></div>
+          <div class="ball" id= "ball2"></div>
+
+        -usar la propiedad de escala para interactuar con el mouse
+
+        <style>
+            .first {
+              border-radius: 20px;
+              width: 70%;
+              height: 200px;
+              margin: 50px auto;
+              background:linear-gradient(35deg, #CCFFFF,   #FFCCCC);
+              box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+            .first:hover{
+                transform: scale(1.1);
+            }
+          
+        </style>
+          
+        <div class="first"></div>
+
+        <!-- nota : si se le aplica el scale atribute se escalaran jusnto con el contenido del elemento. -->
+
+        -sesgar (paralelogramo)
+
+        <style>
+            .first {
+              border-radius: 20px;
+              width: 70%;
+              height: 200px;
+              margin: 50px auto;
+              background:linear-gradient(35deg, #CCFFFF,   #FFCCCC);
+              box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+              transform: skewX(24deg);
+            }
+            .first:hover{
+                transform: scale(1.1);
+                transform: skewX(-24deg);
+            }
+          
+        </style>
+
+        <!-- transform: skewX(24deg); genera un paralelogramo de un rectangulo. 
+        
+                lo mismo con transform: skewY(24deg);
+                con relacion al eje y       .-->
+        
+        -dibujando una luna con css 
+        <style>
+            .center {
+              position: fixed;
+              margin: auto;
+              top: 0px;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              width: 200px;
+              height: 200px;
+              background-color: transparent;
+              border-radius: 50%;
+              box-shadow: 25px 10px 0px 10px;
+            }
+          
+          </style>
+          <div class="center"></div>    
+        
     </body>
 </html>
