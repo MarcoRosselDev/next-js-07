@@ -52,31 +52,50 @@
     -alinear elementos usando (justify-content)
 
     <style>
-      .content-box-grey{
-        width: 100%;
-        height: 250px;
+      h1{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         display: flex;
         justify-content: center;
-        flex-direction: row;
+
+      }
+      .content-box-grey{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         background-color: grey;
       }
       .box-light-blue{
         background-color: lightblue;
-        height: auto;
+        height: 100%;
         width: 25%;
       }
       .box-light-coral{
         background-color: lightcoral;
         width: 25%;
+        height: 100%;
       }
     </style>
       <div  class="content-box-grey">
         <div class="box-light-blue">
-
+          <h1>practis</h1>
         </div>
         <div class="box-light-coral">
-
+          <h1>box 2</h1>
         </div>
       </div>
+
+      <!-- entonces, justify-content  acepta las siguientes reglas
+      
+                      flex-star   (predeterminada si no se especifica)
+                      flex-end     alinea los elementos al final
+                      space-between   se enpujan a los vordes
+                      space-around    se reparten espacios intermedios
+                      space-evenly    se repaerte uniformemente-->
+
+    -alinear elementos usando align-items 
+
+    
 </body>
 </html>
