@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     -display flex 
@@ -53,7 +56,7 @@
 
     <style>
       h1{
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Roboto', sans-serif;
         display: flex;
         justify-content: center;
 
@@ -63,18 +66,18 @@
         height: 300px;
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
         background-color: grey;
       }
       .box-light-blue{
         background-color: lightblue;
-        height: 100%;
+        height: 200xp;
         width: 25%;
       }
       .box-light-coral{
         background-color: lightcoral;
         width: 25%;
-        height: 100%;
+        height: 100px;
       }
     </style>
       <div  class="content-box-grey">
@@ -96,6 +99,49 @@
 
     -alinear elementos usando align-items 
 
-    
+        <!-- usando las class de los ejemplos anteriores -->
+    <style>
+      .content-box-grey{
+        align-items: center;
+      }
+    </style>
+
+    <!-- ideal para centrar en el centido contrario al escojido. -->
+
+    -probando las leyes en conjunto
+
+    <style>
+      .practis-container{
+        background-color: pink;
+        display: flex;  
+        height: 200px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50%;
+        font-family: 'Roboto', sans-serif;
+      }
+      .practis-box-one{
+        width: 70px;
+        height: 70px;
+        background-color: rgb(15, 153, 107);
+        border-radius: 50%;
+      }
+      .practis-box-two{
+        width: 90px;
+        height: 90px;
+        background-color: blueviolet;
+        border-radius: 50%;
+      }
+      .practis-container .practis-box-one span{
+        margin: auto;
+      }
+    </style>
+      <div class="practis-container">
+        <div class="practis-box-one">
+          <span>A</span></div>
+        <div class="practis-box-two"><p>B</p></div>
+      </div>
 </body>
 </html>
