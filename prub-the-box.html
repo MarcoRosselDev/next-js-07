@@ -69,5 +69,68 @@
         <div class="box-orange"></div>
         <div class="box-black"></div>
     </section>
+
+    -reducir elementos proporcionalmente
+
+    <style>
+        #box-container {
+          display: flex;
+          height: 500px;
+        }
+        #box-1 {
+          background-color: dodgerblue;
+          width: 100%;
+          height: 200px;
+          flex-shrink:1;    /*probar x numero
+                            no acepta negarivos*/
+        }
+      
+        #box-2 {
+          background-color: orangered;
+          width: 100%;
+          height: 200px;
+          flex-shrink:1.5;      /*acepta decimales
+                    flex-grow es lo mismo pero al revés*/
+        }
+      </style>
+      
+      <div id="box-container">
+        <div id="box-1"></div>
+        <div id="box-2"></div>
+      </div>
+
+      <!-- luego tenemos flex-basis que establece el tamaño inicial antes de que css agua cambioes con shrink o grow.
+         -->
+
+    -usar la propiedad abreviada flex 
+
+    <!-- se puede icorporar todas las propiedades flex
+    
+        Por ejemplo,        flex: 1 0 10px;
+        
+        establecerá el elemento en flex-grow: 1;, 
+                                   flex-shrink: 0;
+                                 y flex-basis: 10px;
+                                
+                                -->
+
+    -ordenar elementos 
+
+    <!-- se puede usar 
+    
+    order: x numero real;
+
+    para decirle a css cual va primero, acepta numeros 
+    negativos.-->
+
+    -align-self:;
+     
+    <!-- acepta los mismos valores que align-items
+    
+        pero alinea individualmente cada elemento
+        anula align-items y sirve en flexibles
+    
+        (ya que float, clear, vertical-align, no se pueden
+        usar con elementos flexibles.)-->
 </body>
 </html>
