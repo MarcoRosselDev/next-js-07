@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #container-box{
+            background-color: rgb(73, 71, 71);
+            width: 100%;
+            height: 200px;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;    /*se aceptan las siguientes 
+                                propiedades:
+                                
+                                    nowrap                  (none)
+
+                                    wrap                        (los ordena en filas o columnas dependiendo)
+
+                                    wrap-reverse                (lo mismo que wrap pero al revés.)*/
+        }
+        .box-blue{
+            background-color: blue;
+            height: 100px;
+            width: 25%;
+        }
+        .box-red{
+            background-color: red;
+            height: 100px;
+            width: 25%;
+        }
+        .box-yellow{
+            background-color: yellow;
+            height: 100px;
+            width: 25%;
+        }
+        .box-pink{
+            background-color: pink;
+            height: 100px;
+            width: 25%;
+        }
+        .box-green{
+            background-color: green;
+            height: 100px;
+            width: 25%;
+        }
+        .box-orange{
+            background-color: orange;
+            height: 100px;
+            width: 25%;
+        }
+        .box-black{
+            background-color: black;
+            height: 100px;
+            width: 25%;
+        }
+    </style>
+    <section id="container-box">
+        <div class="box-blue"></div>
+        <div class="box-red"></div>
+        <div class="box-yellow"></div>
+        <div class="box-pink"></div>
+        <div class="box-green"></div>
+        <div class="box-orange"></div>
+        <div class="box-black"></div>
+    </section>
+</body>
+</html>
