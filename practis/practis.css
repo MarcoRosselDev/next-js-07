@@ -1,20 +1,44 @@
 header{
+    border: 1px solid black;
+    display: flex;
+}
+header nav{
     display: flex;
 }
 .box-1{
-    width: 300px;
-    height: 40px;
+    left: 400px;
+    width: 100px;
+    height: 100px;
     background-color: pink;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
-    margin: 15px;
+    position: relative;
+    /* margin-right: 2px; */
+    /* margin: 15px; */
 }
 .box-2{
-    width: 300px;
-    height: 40px;
+    /* margin-left: 2px; */
+    width: 100px;
+    height: 100px;
     background: rgb(58,245,241);
     background: linear-gradient(121deg, rgba(58,245,241,1) 0%, rgba(212,147,245,0.6766288180311186) 64%, rgba(249,204,241,1) 100%);
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
+
+}
+.box-3{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.michi{
+    width: 40px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 60px;
+    left: 40px;
 
 }
