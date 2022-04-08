@@ -13,16 +13,19 @@
         <p id="description">Thank you for taking the time to help us improve the plataform</p>
     </header>
     <main>
-        <form action="./">
-            <label for="name">name<br>
-                <input type="text" id="name" placeholder="Enter your name" autocomplete="name" required>
+        <form action="./" id="survey-form">
+            <label for="name">Name<br>
+                <input type="text" id="name" placeholder="Enter your name" autocomplete="name" required> <br>
+            </label>
+            <label for="email">Email<br>
+                <input type="text" id="email" placeholder="Enter your Email" autocomplete="email" pattern="{a-z}@gmail.com" required>
             </label>
 
 
 
 
 
-
+            <br>
             <button type="submit">submit</button>
 
         </form>
