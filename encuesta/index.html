@@ -14,11 +14,14 @@
     </header>
     <main>
         <form action="./" id="survey-form">
-            <label for="name">Name<br>
-                <input type="text" id="name" placeholder="Enter your name" autocomplete="name" required> <br>
+            <label for="name-label">Name<br>
+                <input type="text" id="name" id="name-label" placeholder="Enter your name" autocomplete="name" required> <br>
             </label>
-            <label for="email">Email<br>
-                <input type="text" id="email" placeholder="Enter your Email" autocomplete="email" pattern="{a-z}@gmail.com" required>
+            <label for="email-label">Email<br>
+                <input type="email" id="email" id="email-label" placeholder="Enter your Email" autocomplete="email" required><br>
+            </label>
+            <label for="number-label">Age (optional) <br>
+                <input type="number" id="number-label" placeholder="Age" autocomplete="off" ><br>
             </label>
 
 
