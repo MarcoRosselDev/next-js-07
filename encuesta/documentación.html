@@ -57,6 +57,21 @@
 
     <!-- los botones de radio son un tipo de input
             para crear multiples opciones se debe de anidar dentro de su propio label (etiqueta
-            y cada input debe tener el mismo name="los-que-sea") -->
+            y cada input debe tener el mismo name="los-que-sea")
+            - esto para crear un grupo
+            - asi al seleccionar uno se anulan automaticamente la selección de los demas
+            - esto garantiza que el usuario solo sara una respuesta
+        
+            - se considera buena practica dejar un for en el label que coincida con el id 
+              atributo del input elemento (asistencia de discapacidad visual)
+            
+                    por ejemplo     
+                
+                    <label for="shuta">
+                        <input type="radio" name="indoor-outdoor" id="shuta">indoor         //los dos podian ir en el mismo label pero 
+                    </label>                                                                //el ejercicio lo solicito así.
+                    <label for="shuta2">
+                        <input type="radio" name="indoor-outdoor" id="shuta2">outdoor
+                    </label>        -->
 </body>
 </html>
