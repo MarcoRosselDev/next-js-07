@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(32, 31, 31);
+}
+.main-container {
+    height: 150vh;
+    margin: 10px 10px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+.container-1 {
+    background-color: cadetblue;
+    margin: 10px 10px;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.item {
+    background-color: rgb(248, 176, 82);
+}
