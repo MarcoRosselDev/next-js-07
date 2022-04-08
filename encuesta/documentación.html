@@ -88,6 +88,20 @@
 
 
 
-    <!-- atributo de valor con botones de radio y casillas de verificación -->
+    <!-- atributo de valor con botones de radio y casillas de verificación --> <label for="indoor">
+                                                                                    <input id="indoor" value="indoor" type="radio" name="indoor-outdoor">Indoor
+                                                                                </label>
+   <!-- value="indoor" es el dato que se envia al servidor para trabajarlo.
+        - esto sirbe para trabajar con javascript
+    
+        - es clave aplicar value por que sino enviara el valor por defecto que es on
+        - esto es usles por que si hay más de un dato seran todos estos on      -->
+
+
+
+    <!-- aplicar selecciones predeterminadas aplicando (checked)--> <input type="radio" name="test-name" checked>
+
+    <!-- solo aplicar checked en un elemento de cada grupo 
+        para aselerar el proseso si es lo que se quiere.         -->
 </body>
 </html>
