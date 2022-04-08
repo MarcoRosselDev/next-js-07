@@ -14,16 +14,46 @@
     </header>
     <main>
         <form action="./" id="survey-form">
-            <label for="name-label">Name<br>
-                <input type="text" id="name" id="name-label" placeholder="Enter your name" autocomplete="name" required> <br>
-            </label>
-            <label for="email-label">Email<br>
-                <input type="email" id="email" id="email-label" placeholder="Enter your Email" autocomplete="email" required><br>
-            </label>
-            <label for="number-label">Age (optional) <br>
-                <input type="number" id="number-label" placeholder="Age" autocomplete="off" ><br>
-            </label>
+            <label id="name-label" for="name">Name</label>
+            <input type="text" id="name" required placeholder="Enter your name" autocomplete="name">
+                <!-- <input type="text" id="name" id="name-label" placeholder="Enter your name" autocomplete="name" required> -->
+            <label id="email-label" for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your Email" autocomplete="email" required>
+            
+            <label id="number-label" for="number">Age (optional)</label>
+            <input type="number" id="number" placeholder="Age" min="10" max="99" autocomplete="off" >
+            
+            <label for="dropdown">Which option best describes your current role?</label>
+            <select name="./" id="dropdown">
+                <option value="student">Student</option>
+                <option value="full-time-learner">Full time learner</option>
+                <option value="full-time-job">Full time job</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+                <option value="other">Other</option>
+            </select>
 
+            <fieldset>
+                <legend>would you recommend freeCodeCamp to a friend?</legend>  
+                <!-- esta bueno esta etiqueta legend. -->
+            
+            <input type="radio" name="action" checked id="definitely" value="definitely">
+            <label for="definitely">definitely</label>
+
+            <input type="radio" name="action"  id="maybe" value="maybe">
+            <label for="maybe">maybe</label>
+
+            <input type="radio" name="action"  id="not-sure" value="not-sure">
+            <label for="not-sure">Not sure</label>
+
+            </fieldset>
+
+            <label for="dropdown-2">What is your favorite of freeCodeCamp</label>
+            <select name="./" id="dropdown-2">
+                <option value="challenges">Challenges</option>
+                <option value="projects">Projects</option>
+                <option value="community">Community</option>
+                <option value="open-source">Opensource</option>
+            </select>
 
 
 
