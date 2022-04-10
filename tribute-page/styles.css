@@ -30,8 +30,9 @@ main header  h1{
 }
 #image {
     display:block;
-    max-width: 100%;
+    max-width: 95%;
     /* max-width: 600px; */
+    margin: 10px 10px;
 }
 #tribute-info {
     text-align: left;
