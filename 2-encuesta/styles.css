@@ -15,11 +15,13 @@ body{
 
     background-repeat: no-repeat;
     background-position: center;
+    /* justify-items: center; */
 }
 /* header section */
 header {
     display: block;
     text-align: center;
+    width: minmax(320px, 800px);
 }
 h1 {
     color: white;
@@ -30,11 +32,12 @@ p {
 
 /* main section */
 main {
-    display: grid;
-    grid-template-rows: auto;
-    background-color: rgba(27, 27, 50, 0.8);;
-    justify-content: center;
+    background-color: rgba(27, 27, 50, 0.8);
     width: 80%;
-    justify-content: center;
-    
+    border-radius: 5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+
 }
