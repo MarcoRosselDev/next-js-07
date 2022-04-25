@@ -1,3 +1,10 @@
+body {
+    background: #aa4b6b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 .weapper {
     max-width: 1050px;
     margin: 0 20px;
@@ -11,10 +18,15 @@
     margin-left: 5px;
     margin-right: 5px;
     flex: 1 1 200px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
 .tall-panel {
     grid-row-end: span 2;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
 }
 
 .header,
@@ -23,6 +35,7 @@
     margin-right: 5px;
     flex: 0 1 100%;
     grid-column: 1/ -1;
+    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
 }
 .weapper > * {
     border: 1px solid black;
