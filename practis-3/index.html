@@ -9,15 +9,25 @@
 <style>
     body {
         margin: 0;
-        width: 100%;
-        height: 100vh;
+        width: 90%;
+        height: 90vh;
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
-
+        grid-template-columns: repeat(autofill, minmax(320px, 1fr));
+        gap: 10px;
+        padding: 5px;
     }
 
 /* practis whit a position and min-max property */
+    .container-1 {
+        background-color: cornflowerblue;
 
+    }
+    .container-2 {
+        background-color: darkgoldenrod;
+    }
+    .container-3 {
+        background-color: cadetblue;
+    }
 </style>
 <body>
     <div class="container-1"></div>
