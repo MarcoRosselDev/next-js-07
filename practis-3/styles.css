@@ -1,5 +1,5 @@
 .weapper {
-    max-width: 940px;
+    max-width: 1050px;
     margin: 0 20px;
     gap: 10px;
     display: grid;
@@ -15,4 +15,26 @@
 
 .tall-panel {
     grid-row-end: span 2;
+}
+
+.header,
+.footer {
+    margin-left: 5px;
+    margin-right: 5px;
+    flex: 0 1 100%;
+    grid-column: 1/ -1;
+}
+.weapper > * {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.a {
+    background-color: darkkhaki;
+}
+.e {
+    background-color: blueviolet;
+}
+.e img{
+    
 }
