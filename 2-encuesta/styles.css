@@ -66,11 +66,18 @@ label {
     font-family: sans-serif;
     margin-top: 30px;
     margin-bottom: 5px;
-
+    display: flex;
 }
 
 .form-style {
     height: 35px;
     border-radius: 5px;
     padding-left: 20px;
+}
+.dieldset-sectioin {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 30px;
+    border: none;
 }
