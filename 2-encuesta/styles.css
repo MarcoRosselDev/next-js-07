@@ -56,6 +56,21 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    max-width: min(80%, 800px);
+    /* max-width: min(80%, 800px); */
     min-width:  320px;
+}
+
+label {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 30px;
+    margin-bottom: 5px;
+
+}
+
+.form-style {
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
 }
