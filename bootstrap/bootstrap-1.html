@@ -146,6 +146,28 @@ Tomemos por ejemplo la clase de Bootstrap col-md-*. Aquí, md significa mediano 
 
 En el 'Cat Photo App' que estamos armando, vamos a usar col-xs-*, donde xs significa extra pequeño ("extra small" como una pantalla de teléfono), y * es el número de columnas que va a tomar el elemento en anchura.
 
+--------------------------------------------------------------------
+ejercicio;
+
+Pon los botones Like, Info y Delete lado a lado, anidando los tres dentro de un elemento <div class="row">, luego, cada uno de ellos dentro de un elemento <div class="col-xs-4">.
+
+La clase row es aplicada a un div, y los botones mismos pueden ser anidados dentro de él.
+
+---------------------------------------------------------------------
+solución;
+
+<div class="row">
+    <div class="col-xs-4">
+        <button class="btn btn-block btn-primary">Like</button>
+    </div>
+    <div class="col-xs-4">
+        <button class="btn btn-block btn-info">Info</button>
+    </div> 
+    <div class="col-xs-4">  
+        <button class="btn btn-block btn-danger">Delete</button>
+    </div>
+</div>
+
 -->
 <!--  -->
 <!--  -->
