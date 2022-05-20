@@ -82,7 +82,34 @@ solución:
 </script>
 
 -->
-<!--  -->
+<!-- 4 apunta a elementos por id usando jQuery
+
+También puedes apuntar a elementos por su atributo id.
+
+Primero apunta a tu elemento button con el id target3 usando el selector $("#target3").
+
+Ten en cuenta que, al igual que con las declaraciones CSS, escribes un # antes del nombre del id.
+
+Luego usa la función .addClass() de jQuery para agregar las clases animated y fadeOut.
+
+Así es como harás que el elemento button con el id target6 se desvanezca:
+
+$("#target6").addClass("animated fadeOut");
+
+------------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shake");
+    $("#target3").addClass("animated fadeOut");  
+  });  
+</script>
+
+nota: el boton con al target3 se va desbaneciendo asta desaparecer.
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
