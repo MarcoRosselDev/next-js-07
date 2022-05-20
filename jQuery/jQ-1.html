@@ -124,5 +124,32 @@ solución:
 </script>
 
 -->
-<!--  -->
+<!-- 6 apunta al mismo elemento con múltiples selectores jQuery
+
+Ahora conoces tres maneras de seleccionar elementos: por tipo: $("button"), por clase: $(".btn"), y por id $("#target1").
+
+Aunque es posible agregar múltiples clases en una sola llamada .addClass(), vamos a agregarlos al mismo elemento de tres maneras diferentes.
+
+Usando .addClass(), agrega solo una clase a la vez al mismo elemento, de tres maneras diferentes:
+
+Agrega la clase animated a todos los elementos con el tipo button.
+
+Agrega la clase shake a todos los botones con la clase .btn.
+
+Agrega la clase btn-primary al botón con id #target1.
+
+Nota: Solo debes apuntar a un elemento y agregar solo una clase a la vez. En total, tus tres selectores individuales terminarán agregando las tres clases shake, animated, y btn-primary a #target1.
+
+----------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated");
+    $(".btn").addClass("shake");
+    $("#target1").addClass("btn-primary");
+  });
+</script>
+
+-->
 <!--  -->
