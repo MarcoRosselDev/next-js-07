@@ -200,5 +200,29 @@ solución:
 </script>
 
 -->
-<!-- 9 deshabilita un elemento usando jQuery -->
+<!-- 9 deshabilita un elemento usando jQuery
+
+También puedes cambiar las propiedades que no son CSS de tus elementos HTML con jQuery. Por ejemplo, puedes desactivar botones.
+
+Cuando deshabilitas un botón, se mostrará en gris y no se podrá hacer clic sobre este.
+
+jQuery tiene una función llamada .prop() que te permite ajustar las propiedades de los elementos.
+
+Así es como deshabilitarías todos los botones:
+
+$("button").prop("disabled", true);
+
+Deshabilita solo el botón target1.  
+
+-----------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+  });
+</script>
+
+-->
 <!--  -->
