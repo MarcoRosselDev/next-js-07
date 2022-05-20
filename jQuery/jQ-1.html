@@ -273,7 +273,31 @@ solución:
 </script>
 
 -->
-<!--  -->
+<!-- 12 usa appendTo para mover elementos con jQuery
+
+Ahora intentemos mover elementos de un div a otro.
+
+jQuery tiene una función llamada appendTo() que te permite seleccionar elementos HTML y agregarlos a otro elemento.
+
+Por ejemplo, si quisiéramos mover target4 desde nuestro "right well" a nuestro "left well", usaríamos:
+
+$("#target4").appendTo("#left-well");
+
+Mueve tu elemento target2 desde tu left-well a tu right-well.
+
+------------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+  });
+</script>
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
