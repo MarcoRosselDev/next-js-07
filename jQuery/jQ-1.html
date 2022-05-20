@@ -30,7 +30,32 @@ $(document).ready(function() {
 esto va en la parte superior de todo el codigo pero no tengo claro si importa laparte del head que lo ubique.
 
 -->
-<!--  -->
+<!-- 2 apunta a elementos HTML con selectores usando jQuery
+
+Ahora tenemos una función document ready.
+
+Ahora vamos a escribir nuestra primera declaración de jQuery. Todas las funciones de jQuery comienzan con un $, usualmente conocido como un operador de signo de dólares.
+
+jQuery a menudo selecciona un elemento HTML con un selector, y luego le hace algo a ese elemento.
+
+Por ejemplo, hagamos que todos tus elementos button reboten. Simplemente agrega este código dentro de tu función document ready:
+
+$("button").addClass("animated bounce");
+
+Ten en cuenta que ya hemos incluido tanto la librería jQuery como la librería Animate.css en segundo plano para que puedas usarlos en el editor. Así que estás usando jQuery para aplicar la clase Animate.css bounce a tus elementos button.
+
+-----------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated bounce");
+  });
+</script>
+
+nota.....los botones rebotan cuando se carga la paguina.
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
