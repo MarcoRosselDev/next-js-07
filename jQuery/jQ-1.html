@@ -56,7 +56,32 @@ solución:
 nota.....los botones rebotan cuando se carga la paguina.
 
 -->
-<!--  -->
+<!-- 3 apunta a elementos por clase usando jQuery
+
+¿Ves cómo hemos hecho que todos tus elementos button reboten? Los seleccionamos con $("button"), luego agregamos algo de clases CSS a ellos con .addClass("animated bounce");.
+
+Acabas de usar la función .addClass() de jQuery, que te permite agregar clases a los elementos.
+
+Primero, apuntemos tus elementos div con la clase well usando el selector $(".well").
+
+Ten en cuenta que, al igual que con las declaraciones CSS, escribes un . antes del nombre de la clase.
+
+Luego usa la función .addClass() de jQuery para agregar las clases animated y shake.
+
+Por ejemplo, puedes hacer que todos los elementos con la clase text-primary se agiten agregando lo siguiente a tu función document ready function:
+
+$(".text-primary").addClass("animated shake");
+
+-----------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $(".well").addClass("animated shake");
+  });
+</script>
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
