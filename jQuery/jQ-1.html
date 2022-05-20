@@ -225,4 +225,31 @@ solución:
 </script>
 
 -->
-<!--  -->
+<!-- 10 cambia el texto dentro de un elemento usando jQuery
+
+Con jQuery, puedes cambiar el texto entre las etiquetas de abertura y cierre de un elemento. Puedes incluso cambiar el código HTML.
+
+jQuery tiene una función llamada .html() que te permite agregar etiquetas HTML y texto dentro de un elemento. Cualquier contenido anterior dentro del elemento será completamente reemplazado con el contenido que proporciones usando esta función.
+
+Así es como reescribirías y enfatizarías el texto de nuestro título:
+
+$("h3").html("<em>jQuery Playground</em>");
+
+jQuery también tiene una función similar llamada .text() que solamente altera el texto sin agregar etiquetas. En otras palabras, esta función no evaluará ninguna etiqueta HTML que le pasemos, pero en cambio, la tratará como el texto por el que quieres reemplazar el contenido existente.
+
+Cambia el botón con id target4 enfatizando su texto.
+
+Ve a nuestro artículo sobre <em> para aprender la diferencia entre <i> y <em> y sus usos.
+
+Ten en cuenta que mientras la etiqueta <i> tradicionalmente se usaba para enfatizar texto, fue adaptada para ser usada como etiqueta para iconos. La etiqueta <em> ahora es ampliamente aceptada como la etiqueta de énfasis. Cualquiera de las dos servirá para este desafío.
+
+  ---------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("#target4").html("<em>#target4</em>");
+  });
+</script>
+
+-->
