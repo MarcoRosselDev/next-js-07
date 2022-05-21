@@ -246,6 +246,30 @@ La parte #{$i} es la sintaxis para combinar una variable (i) con texto para hace
 
 Esta es una manera poderosa de crear un diseño de cuadrícula (grid). Ahora tienes doce opciones de ancho de columna disponibles como clases CSS.
 
+--------------------------------------------------------------------
+ejercicio:
+
+Escribe una directiva @for que tome una variable $j que vaya de 1 a 6.
+
+Debes crear 5 clases llamadas .text-1 a .text-5 donde cada una tiene un font-size establecido en 15px multiplicado por el índice.
+
+--------------------------------------------------------------------
+solución:
+
+<style type='text/scss'>
+
+@for $j from 1 through 6 {
+  .text-#{$j} { font-size: 15px * $j; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+
 -->
 <!--  -->
 <!--  -->
