@@ -177,6 +177,44 @@ Y al igual que en JavaScript, @else if y @else prueban más condiciones:
   }
 }
 
+-----------------------------------------------------------------------
+ejercicio:
+
+Crea un mixin llamado border-stroke que toma un parámetro $val. El mixin debe comprobar las siguientes condiciones utilizando @if, @else if, y @else:
+
+light - 1px solid black
+medium - 3px solid black
+heavy - 6px solid black
+
+Si $val no es light, medium, o heavy, el borde debe establecerse en none.
+
+-----------------------------------------------------------------------
+solución:
+
+<style type='text/scss'>
+
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border:1px solid black;
+    } @else if $val == medium {
+      border:3px solid black;
+    } @else if $val == heavy {
+      border:6px solid black;
+    } @else {
+      border:none; 
+    }
+  }
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>
+
 -->
 <!--  -->
 <!--  -->
