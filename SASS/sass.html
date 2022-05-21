@@ -216,7 +216,37 @@ solución:
 <div id="box"></div>
 
 -->
-<!--  -->
+<!-- 5 usa @for para crear un bucle Sass
+
+la directiva @for agrega estilos en un bucle, muy similar a un bucle for en JavaScript.
+
+@for se utiliza de dos maneras: "de principio hasta el fin" o "de principio a fin". La principal diferencia es que el "de principio a fin" excluye el número final como parte de la cuenta, y "de principio hasta el fin" incluye el número final como parte de la cuenta.
+
+Aquí hay un ejemplo de principio hasta el fin:
+
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+
+La parte #{$i} es la sintaxis para combinar una variable (i) con texto para hacer una cadena. Cuando el archivo Sass se convierte en CSS, tiene este aspecto:
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+...
+
+.col-12 {
+  width: 100%;
+}
+
+Esta es una manera poderosa de crear un diseño de cuadrícula (grid). Ahora tienes doce opciones de ancho de columna disponibles como clases CSS.
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
