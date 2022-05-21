@@ -96,7 +96,35 @@ solución:
 </div>
 
 -->
-<!--  -->
+<!-- 3 crea css reutilizable con mixins
+
+En Sass, un mixin es un grupo de declaraciones de CSS que pueden reutilizarse a través de la hoja de estilo.
+
+Las nuevas funciones de CSS tardan en ser adoptadas por completo y estar listas para su uso en todos los navegadores. A medida que se agregan funciones a los navegadores, las reglas CSS que las utilizan pueden necesitar prefijos de proveedor. Consideremos box-shadow:
+
+div {
+  -webkit-box-shadow: 0px 0px 4px #fff;
+  -moz-box-shadow: 0px 0px 4px #fff;
+  -ms-box-shadow: 0px 0px 4px #fff;
+  box-shadow: 0px 0px 4px #fff;
+}
+
+Es mucho teclear para reescribir esta regla para todos los elementos que tienen un box-shadow, o para cambiar cada valor para probar diferentes efectos. Mixins son como funciones para CSS. Aquí está cómo escribir una:
+
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+
+La definición empieza con @mixin seguido de un nombre personalizado. Los parámetros ( $x, $y, $blur, y $c en el ejemplo anterior) son opcionales. Ahora cada vez que se necesite una regla box-shadow, una sola línea llamando al mixin reemplaza el tener que escribir todos los prefijos del proveedor. Se llama a un mixin con la directiva @include:
+
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
