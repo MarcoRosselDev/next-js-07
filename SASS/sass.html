@@ -18,6 +18,25 @@ h1 {
 
 Un ejemplo en el que las variables son útiles es cuando un número de elementos tiene que ser del mismo color. Si se cambia ese color, el único lugar para editar el código es el valor de la variable.
 
+------------------------------------------------------------------------
+ejercicio:
+
+Crea una variable $text-color y asígnala como red. Luego, cambia el valor de la propiedad color para el .blog-post y h2 a la variable $text-color.
+
+------------------------------------------------------------------------
+solución:
+
+<style type='text/scss'>
+  $text-color: red;
+
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: $text-color;
+  }
+</style>
+
 -->
 <!--  -->
 <!--  -->
