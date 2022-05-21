@@ -150,7 +150,34 @@ solución:
 <div id="awesome"></div>
 
 -->
-<!--  -->
+<!-- 4 usa @if y @else para agregar lógica a tus estilos
+
+La directiva @if en Sass es útil para probar un caso específico: funciona igual que la sentencia if en JavaScript.
+
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+
+Y al igual que en JavaScript, @else if y @else prueban más condiciones:
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+
+-->
 <!--  -->
 <!--  -->
 <!--  -->
