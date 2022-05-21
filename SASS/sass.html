@@ -340,7 +340,31 @@ $x: 1;
 
 Primero, define una variable $x y establécela a 1. A continuación, utiliza la directiva @while para crear el sistema de cuadrícula while $x sea menor que 13. Después de configurar la regla CSS para width, $x se incrementa por 1 para evitar un bucle infinito.
 
+-------------------------------------------------------------------
+ejercicio:
+
 Usa @while para crear una serie de clases con diferentes font-sizes.
+
+Debe haber 5 clases diferentes desde text-1 hasta text-5. Luego ajusta font-size a 15px multiplicado por el número de índice actual. ¡Asegúrate de evitar un bucle infinito!
+
+-------------------------------------------------------------------
+solución:
+
+<style type='text/scss'>
+
+$x: 1;
+@while $x < 6 {
+  .text-#{$x} { font-size: 15px * $x;}
+  $x: $x + 1;
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
 
 -->
 <!--  -->
