@@ -382,6 +382,36 @@ solución:
 </script>
 
 -->
-<!--  -->
+<!-- 16 apunta a un hijo espcifico de un elemento usando jQuery
+
+Has visto por qué los atributos id son muy convenientes para apuntar con los selectores de jQuery. Pero no siempre tendrás tan buenos id's con los que trabajar.
+
+Afortunadamente, jQuery tiene algunos otros trucos para apuntar a los elementos correctos.
+
+jQuery usa selectores de CSS para apuntar elementos. El selector target:nth-child(n) de CSS, te permite seleccionar todos los enésimos elementos con el tipo de elemento o la clase apuntada.
+
+Así es como le darías al tercer elemento en cada "well" la clase de rebote:
+
+$(".target:nth-child(3)").addClass("animated bounce");
+
+Haz que el segundo niño en cada uno de sus elementos de "well" rebote. Debes seleccionar los hijos de los elementos con la clase target.
+
+---------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $(".target:nth-child(2)").addClass("animated bounce");
+  });
+</script>
+
+-->
 <!--  -->
 <!--  -->
