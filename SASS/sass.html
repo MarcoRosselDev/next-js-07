@@ -70,6 +70,31 @@ nav {
   }
 }
 
+------------------------------------------------------------------------
+ejercicio:
+
+Utiliza la técnica de anidación mostrada anteriormente para reorganizar las reglas CSS para ambos hijos del elemento .blog-post. Para fines de prueba, el h1 debe ir antes del elemento p.
+
+------------------------------------------------------------------------
+solución:
+
+<style type='text/scss'>
+  .blog-post {
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
+
 -->
 <!--  -->
 <!--  -->
