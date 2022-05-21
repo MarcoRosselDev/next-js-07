@@ -198,9 +198,31 @@ const DemoComponent = function() {
     <div className='customClass' />
   );
 };
+
 Después de ser transpilado, el <div> tendrá una clase CSS de customClass.
 
 Debido a que un componente JSX representa HTML, podrías poner varios componentes juntos para crear una página HTML más compleja. Esta es una de las ventajas clave de la arquitectura de componentes que React proporciona. Te permite componer tu interfaz de usuario de muchos componentes separados y aislados. Esto hace más fácil construir y mantener complejas interfaces de usuario.
+
+---------------------------------------------------------------------
+ejercicio:
+
+El editor de código tiene una función llamada MyComponent. Completa esta función para que retorne un único elemento div que contiene alguna cadena de texto.
+
+Nota: El texto se considera hijo del elemento div, por lo que no podrás utilizar una etiqueta de autocierre.
+
+---------------------------------------------------------------------
+solución:
+
+const MyComponent = function() {
+  // Cambia el código debajo de esta línea
+  return (
+    <div>
+    <p>texto de prueba</p>
+    <p>para testear jsx</p>
+  </ div>
+  );
+  // Cambia el código encima de esta línea
+}
 
 -->
 <!--  -->
