@@ -301,6 +301,30 @@ Ten en cuenta que la variable $key es necesaria para hacer referencia a las clav
   color: green;
 }
 
+-------------------------------------------------------------------
+ejercicio:
+
+Escribe una directiva @each que recorra una lista: blue, black, red y asigna cada variable a una clase .color-bg, donde la parte color cambia para cada elemento. Cada clase debe establecer el background-color al respectivo color.
+
+-------------------------------------------------------------------
+solución:
+
+<style type='text/scss'>
+
+@each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+
 -->
 <!--  -->
 <!--  -->
