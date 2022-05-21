@@ -413,5 +413,35 @@ solución:
 </script>
 
 -->
-<!--  -->
+<!-- 17 apunta a elementos pares utilizando jQuery
+
+También puedes apuntar a elementos basado en sus posiciones, usando los selectores :odd o :even.
+
+Ten en cuenta que jQuery es indexado desde el cero, lo que significa que el primer elemento de una selección tiene la posición 0. Esto puede ser un poco confuso, ya que contra-intuitivamente, :odd selecciona el segundo elemento (posición 1), cuarto elemento (posición 3), y así sucesivamente.
+
+Así es como apuntas a todos los elementos impares con la clase target y les das clases:
+
+$(".target:odd").addClass("animated shake");
+
+Intenta seleccionar todos los elementos pares target y darle las clases de animated y shake. Recuerda que even se refiere a la posición de los elementos con un sistema de indexado desde cero en mente.
+
+-----------------------------------------------------------------------
+solución:
+
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $("#left-well").children().css("color", "green");
+    $(".target:nth-child(2)").addClass("animated bounce");
+    $(".target:even").addClass("animated shake");
+  });
+</script>
+
+-->
 <!--  -->
