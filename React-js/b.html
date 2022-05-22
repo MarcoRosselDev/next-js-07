@@ -68,6 +68,37 @@ En el ejemplo anterior, la parte de PropTypes.func verifica que handleClick es u
 
 Nota: A partir de React v15.5.0, PropTypes se importa de manera independiente de React, así: import PropTypes from 'prop-types';
 
+------------------------------------------------------------------
+ejercicio:
+
+Define propTypes para el componente Items de tal manera que quantity sea una prop obligatoria y verificar que sea de tipo number.
+
+------------------------------------------------------------------
+solución:
+
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Cambia el código debajo de esta línea
+Items.propTypes = {
+  quantity: PropTypes.number.isRequired
+};
+// Cambia el código encima de esta línea
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+
 -->
 <!--  -->
 <!--  -->
