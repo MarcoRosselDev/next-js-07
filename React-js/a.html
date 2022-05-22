@@ -542,4 +542,14 @@ class Calendar extends React.Component {
 };
 
 -->
-<!--  -->
+<!-- 15 pasa un arreglo como "props"
+
+El último desafío demostró cómo pasar información desde un componente padre a un componente hijo como props o propiedades. Este desafío busca demostrar cómo se pueden pasar arreglos como props. Para pasar un arreglo a un elemento JSX, debe ser tratado como JavaScript y envolverlo entre llaves.
+
+<ParentComponent>
+  <ChildComponent colors={["green", "blue", "red"]} />
+</ParentComponent>
+
+El componente hijo entonces tiene acceso a la propiedad del arreglo colors. Los métodos de arreglo, como join() pueden ser usados al acceder a la propiedad. const ChildComponent = (props) => <p>{props.colors.join(', ')}</p> Esto unirá a todos elementos colors del arreglo en una cadena separada por comas y se convertirá en: <p>green, blue, red</p> Más tarde, aprenderemos sobre otros métodos comunes para representar arreglos de datos en React.
+
+-->
