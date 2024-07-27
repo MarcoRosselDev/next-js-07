@@ -35,8 +35,11 @@ for (const value of iterable) {
 54 functions
 
 function demo(parameter){
-
+  
 }
 demo(argument)
+--------------------------------------
+107 array.unshift()
 
+enpuja un elemento al principio del array, si lo guardas en una variable devuelve el lenght nuevo del array
 */
