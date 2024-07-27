@@ -39,7 +39,11 @@ function demo(parameter){
 }
 demo(argument)
 --------------------------------------
-107 array.unshift()
+107 array.unshift()     (method)
 
-enpuja un elemento al principio del array, si lo guardas en una variable devuelve el lenght nuevo del array
+enpuja un elemento al principio del array, si lo guardas en una variable devuelve el lenght nuevo del array 
+--------------------------------------
+107 array.shift()     (method)
+
+remueve el primer elemento de un array como .pop pero este remueve el primero
 */
