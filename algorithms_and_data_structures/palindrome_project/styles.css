@@ -5,6 +5,9 @@
 }
 
 body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,14 +16,21 @@ body{
   width: 100vw;
   background-color: #0a0a23;
   color: white;
+
+  gap: 15px;
+}
+
+span{
+  font-weight: bold;
 }
 
 .container-input{
   border: 1px solid pink;
   width: 350px;
-  min-height: 100px;
+  min-height: 120px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   border-radius: 15px;
@@ -37,4 +47,23 @@ body{
   padding: 20px;
   max-width: 350px;
   border-radius: 15px;
+}
+
+.input-line{
+  height: 30px;
+  padding: 3px;
+}
+
+#text-input{
+  border: 1px solid white;
+  border-bottom: 1px solid ;
+}
+
+button{
+  background-color: #5a01a7;
+  color: white;
+  padding: 4px;
+  width: 80px;
+  border-radius: 13px;
+  cursor: pointer;
 }
