@@ -1,6 +1,6 @@
 function isAPalindrome(str) {
   //remover todos los caracteres no alfaveticos para la comparacion
-  const regex = /[A-Za-z]/gi;
+  const regex = /[A-Za-z0-9]/gi; // may min de la a - z | numeros | \s no se aplica = " " espacios
   //i flag es para kaysensitive "sensivle a mayusculas"
   //str.replace(regex, "");
   //retorna +- y " " con "" vacio   /[+-\s]/g
