@@ -12,7 +12,9 @@ function alertEmtyInput() {
 // antes de seguir tomar un curso de regex para limpiar el input tipo string
 function isAPalindrome(str) {
   //remover todos los caracteres no alfaveticos para la comparacion
-  const regex = /a[a-b]g/;
+  const regex = /[A-Z][a-z]/gi;
+  const match = str.match(regex);
+  console.log(match);
   // 1.remover los caracteres no alfaveticos
   // 2.convertir el str en un array[]
   // 3.invertir el array
@@ -20,3 +22,5 @@ function isAPalindrome(str) {
   // 5.comparar el string del paso 4 con el str del paso 1
   // 6.si es o no palindromo manipular el dom para enviar el mensaje
 }
+
+isAPalindrome("marAsdfGG12--=  asdf!1");
