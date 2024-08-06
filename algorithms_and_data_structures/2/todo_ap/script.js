@@ -10,9 +10,12 @@ const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
 
-const taskData = [];
+const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
+if (taskData.length) {
+  updateTaskContainer()
+}
 const addOrUpdateTask = () => {
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
   const taskObj = {
@@ -26,6 +29,7 @@ const addOrUpdateTask = () => {
   } else {
     taskData[dataArrIndex] = taskObj;
   }
+  localStorage.setItem("data", JSON.stringify(taskData));
   updateTaskContainer();
   reset();
 }
@@ -49,6 +53,7 @@ const deleteTask = (buttonEl) => {
   const dataArrIndex = taskData.findIndex((item) => item.id === buttonEl.parentElement.id);
   buttonEl.parentElement.remove();
   taskData.splice(dataArrIndex, 1);
+  localStorage.setItem("data", JSON.stringify(taskData));
 }
 const editTask = (buttonEl) => {
   const dataArrIndex = taskData.findIndex((item) => item.id === buttonEl.parentElement.id);
@@ -60,6 +65,7 @@ const editTask = (buttonEl) => {
   taskForm.classList.toggle("hidden");
 }
 const reset = () => {
+  addOrUpdateTaskBtn.innerText = "Add Task";
   titleInput.value = "";
   dateInput.value = "";
   descriptionInput.value = "";
@@ -90,3 +96,22 @@ taskForm.addEventListener("submit", (e) =>{
   e.preventDefault();
   addOrUpdateTask()
 })
+
+/* const myTaskArr = [
+  { task: "Walk the Dog", date: "22-04-2022" },
+  { task: "Read some books", date: "02-11-2023" },
+  { task: "Watch football", date: "10-08-2021" },
+];
+localStorage.setItem("data", JSON.stringify(myTaskArr));
+const getTaskArr = localStorage.getItem("data");
+console.log(getTaskArr);
+const getTaskArrObj = JSON.parse(localStorage.getItem("data"));
+console.log(getTaskArrObj);
+localStorage.clear(); */
+/* localStorage offers methods for saving, retrieving, and deleting items. 
+The items you save can be of any JavaScript data type.
+
+For instance, the setItem() method is used to save an item, 
+and the getItem() method retrieves the item. To delete a specific item, 
+you can utilize the removeItem() method, or if you want to delete all items in the storage,
+you can use clear(). */
