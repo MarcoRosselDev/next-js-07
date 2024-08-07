@@ -1,26 +1,17 @@
-const callStack = [];
-const a = () => {
-  return "freeCodeCamp " + b();
-}
-const b = () => {
-  return "is " + c();
-}
-const c = () => {
-  return "awesome!";
-}
-console.log(a());
-
-/* Step 47
-In computer science, a stack is a data structure where items are stored in a LIFO (last-in-first-out) manner. If you imagine a stack of books, the last book you add to the stack is the first book you can take off the stack. Or an array where you can only .push() and .pop() elements.
-
-The call stack is a collection of function calls stored in a stack structure. When you call a function, it is added to the top of the stack, and when it returns, it is removed from the top / end of the stack.
-
-You'll see this in action by creating mock call stack.
-
-Initialize a variable named callStack and assign it an empty array. */
 const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
+
+const countDownAndUp = (number) => {
+  console.log(number);
+  if (number === 0) {
+    console.log( "Reached base case");
+    return;
+  } else {
+    countDownAndUp(number -1);
+    console.log(number);    
+  }
+};
 
 const decimalToBinary = (input) => {
   /* const inputs = [];
@@ -43,7 +34,8 @@ const decimalToBinary = (input) => {
   console.log("Remainders: ", remainders);
   result.innerText = remainders.reverse().join(""); */
   // logica más eficiente.
-  let binary = "";
+  // second option
+  /* let binary = "";
   if (input === 0) {
     binary = "0";
     return;
@@ -52,17 +44,34 @@ const decimalToBinary = (input) => {
     binary = (input % 2) + binary;
     input = Math.floor(input /2);
   }
-  result.innerText = binary;
+  result.innerText = binary; */
+  if (input === 0 || input === 1) {
+    return String(input);
+  } else {
+    return decimalToBinary(Math.floor(input / 2)) + (input % 2);
+  }
+};
+
+const showAnimation = () => {
+  console.log("free");
+  console.log("Code");
+  console.log("Camp");
 };
 
 const checkUserInput = () =>{
-  if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberInput.value)< 0) {
+  const inputInt = parseInt(numberInput.value);
+  if (!numberInput.value || isNaN(inputInt) || inputInt< 0) {
     alert("Please provide a decimal number greater than or equal to 0")
     return
   }
-  decimalToBinary(parseInt(numberInput.value));
+  if (inputInt === 5) {
+    showAnimation();
+    return;
+  }
+  result.textContent = decimalToBinary(inputInt);
   numberInput.value = "";
 };
+
 convertBtn.addEventListener("click", checkUserInput);
 numberInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
