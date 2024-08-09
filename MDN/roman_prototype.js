@@ -24,26 +24,33 @@ const roman = (arr) => {
     if (f !== -1) {
       n+= ArrRoman[f];
     } else {
-      console.log(int);
-      console.log(typeof int);
-      if (int > 1 && int < 4) {
-        n+= "I".repeat(int)
+      console.log(typeof Number(arr[i][0]), "asdf", Number(arr[i][0]));
+      if (int === 0) {
+        return
+      } else if (int > 1 && int < 4) {
+        n += "I".repeat(int)
       } else if (int > 5 && int < 9) {
-        n+= "V"+"I".repeat(int - 5);
+        n += "V"+"I".repeat(int - 5);
       } else if (int >= 20 && int < 40) {
-        n+= "X".repeat(arr[i][0]);
-      } else if (int => 60 && int < 90) {
-        n+= "L"+ "X".repeat(arr[i][0] - 5)
+        n += "X".repeat(arr[i][0]);
+      } else if (int >= 60 && int < 90) {
+        n += "L"+ "X".repeat(Number(arr[i][0] - 5))
+      } else if (int >= 200 && int < 400) {
+        n += "C".repeat(arr[i][0])
+      } else if (int >= 600 && int < 900) {
+        n += "D"+"C".repeat(Number(arr[i][0]) - 5)
+      } else if (int >= 2000 && int < 4000) {
+        n += "M".repeat(Number(arr[i][0]))
       }
     }
   }
-  console.log(n, "o");
+  return n
 }
-roman(proto("100"))
+roman(proto("3864"))
 /* roman(proto("541"))
 roman(proto("542")) */
 /* proto("23")
-proto("90")
+proto("90")MMMDCCCLXIV
 proto("1235")
 proto("123235") 
 [ '20', '3' ]
