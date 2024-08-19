@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Buscador de Pokemons</title>
+</head>
+<body>
+  <p>Search for Pokémon Name or ID:</p>
+  <div class="inpt">
+    <input type="text" id="search-input" required>
+    <button type="button" id="search-button">search</button>
+  </div>
+  <div id="pokemon-div">
+    <p id="pokemon-name">Charizar</p>
+    <p id="pokemon-id"># 6</p>
+    <p id="weight">Weight: 905</p>
+    <p id="height">Height: 17</p>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="pokemon image">
+    <div class="type-div">
+      <p id="type">fire</p>
+      <p id="type">flying</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="base-stats">
+      <p><strong>Base</strong></p>
+      <p><strong>Stats</strong></p>
+    </div>
+    <div class="base-stats">
+      <p>HP:</p>
+      <p id="hp"></p>
+    </div>
+    <div class="base-stats">
+      <p>Attack:</p>
+      <p id="attack"></p>
+    </div>
+    <div class="base-stats">
+      <p>Defense:</p>
+      <p id="defense"></p>
+    </div>
+    <div class="base-stats">
+      <p>Sp. Attack:</p>
+      <p id="special-attack"></p>
+    </div>
+    <div class="base-stats">
+      <p>Sp. Defense</p>
+      <p id="special-defense"></p>
+    </div>
+    <div class="base-stats">
+      <p>Speed</p>
+      <p id="speed"></p>
+    </div>
+  </div>
+</body>
+</html>
+<!--
+You should have an element with an id of "types"-->
