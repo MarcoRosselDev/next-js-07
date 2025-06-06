@@ -1,0 +1,1 @@
+# some notes from next documentation and react documentation
