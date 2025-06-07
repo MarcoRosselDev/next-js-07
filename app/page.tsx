@@ -1,3 +1,4 @@
+import Boton from "@/componentes/Boton";
 import Image from "next/image";
 
 export default function Page() {
@@ -5,7 +6,8 @@ export default function Page() {
     <div>
       {/*  */}
       <h1>Hola mundo!</h1>
-      <Image src="/trig.png" width={200} height={400} alt="imagen de prueva"/>
+      <Image src="/trig.png" width={200} height={400} alt="imagen de prueva" priority={true}/>
+      <Boton  text="boton de prueba" />
     </div>
   )
 }
