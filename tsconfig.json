@@ -25,7 +25,9 @@
     "baseUrl": "src/",
     "paths": {
       "@/estilos/*": ["estilos/*"],
-      "@/componentes/*": ["componentes/*"]
+      "@/componentes/*": ["componentes/*"],
+      "@/ui/*": ["ui/*"],
+      "@/types/*": ["types/*"]
     }
   },
   "include": [

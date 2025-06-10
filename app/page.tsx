@@ -1,13 +1,26 @@
-import Boton from "@/componentes/Boton";
-import Image from "next/image";
+"use server";
 
-export default function Page() {
+import Testing from "@/ui/Testing";
+
+export default async function Page() {
+
+  const data = await fetch('https://api.vercel.app/blog')
+  const posts = await data.json()
+
+  //console.log(posts);
+  
+
   return (
     <div>
       {/*  */}
       <h1>Hola mundo!</h1>
-      <Image src="/trig.png" width={200} height={400} alt="imagen de prueva" priority={true}/>
-      <Boton  text="boton de prueba" />
+      <Testing params={posts} />
+
+      {/* <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+      </ul> */}
     </div>
   )
 }

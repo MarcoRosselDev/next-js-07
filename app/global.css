@@ -14,3 +14,9 @@ body {
 main {
   background-color: rgba(0, 0, 0, 0.217);
 }
+
+.post_div{
+  border: 1px solid white;
+  padding: 5px;
+  background-color: rgb(63, 62, 62);
+}
