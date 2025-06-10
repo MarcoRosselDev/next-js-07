@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import './global.css'
  
 // metadatos para cambiar favicon de pendiendo de el tema dark o light
 export const metadata: Metadata = {

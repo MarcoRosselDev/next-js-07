@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* como escuchar type dark/light para crear variables css? */
+
+body {
+  background-color: black;
+  color: white;
+}
+
+main {
+  background-color: rgba(0, 0, 0, 0.217);
+}
