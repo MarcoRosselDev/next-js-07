@@ -13,13 +13,16 @@ function App() {
     if (!formRef.current) return
     const formData = new FormData(formRef.current)
 
-    // O puedes trabajar con él como un objecto plano:
-    //const formJson = Object.fromEntries(formData.entries());
-    const formJson = formData.entries().forEach(d => console.log(d));
-    //formJson.terminos = !!formJson.terminos
-    
-    console.log(formJson);
+    const color = formData.get("color")
+    const inpt = formData.get("patapin")
+    // !! o doble negacion se utilza para convertir cualquier valor en su equivalente booleano
+    const terminos = !!formData.get("terminos") // !! convierte automaticamente cualquier type en booleano
+    // la idea es no enviar un null or "on" en la respuesta al servidor
 
+    console.log(color,inpt, terminos); // blue marco false
+    console.log({color,inpt, terminos}); // {color: 'blue', inpt: 'marco', terminos: false}
+    
+    //const input = iref.current?.value; // optional chaining operator | es | Operador de encadenamiento opcional
   }
 
   return (
