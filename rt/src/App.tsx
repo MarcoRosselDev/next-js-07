@@ -1,43 +1,25 @@
 /** @format */
-
-import { useRef, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import "./App.css";
 
-// uncontrolled components
+// controlled components (useState to do that)
 function App() {
 
-  const formRef = useRef(null)
-  
-  const handleSubmit = (e: FormEvent) => {
+  const [pr, setpr] = useState("hi")
+
+  const handleSubmit = (e : FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return
-    const formData = new FormData(formRef.current)
-
-    // O puedes trabajar con él como un objecto plano:
-    //const formJson = Object.fromEntries(formData.entries());
-    const formJson = formData.entries().forEach(d => console.log(d));
-    //formJson.terminos = !!formJson.terminos
-    
-    console.log(formJson);
-
+    console.log(pr);
   }
 
   return (
-    <form onSubmit={handleSubmit} ref={formRef}>
-      <input type="text" name="patapin"  />
-
-      {/* opciones de color */}
-      <select name="color" defaultValue={""}>
-        <option value="" disabled>seleccióna un color</option>
-        <option value="red">rojo</option>
-        <option value="green">verde</option>
-        <option value="blue">azul</option>
-      </select>
-      {/* checkbox aceptar terminos */}
-        <label htmlFor="ch">Aceptar terminos y condiciones.</label>
-        <input type="checkbox" id="ch" name="terminos"/>
+  <>
+    <form onSubmit={handleSubmit}>
+      <input type="text" onChange={e => setpr(e.target.value)} value={pr}/>
       <button type="submit">send</button>
     </form>
+    <p>{pr}</p>
+  </>
   )
 }
 
