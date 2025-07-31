@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/header/Header'
-import MyForm from './MyForm'
+import Main from './components/main/Main'
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
       <p className="mt-3">
         This is some content that will change appearance with the theme.
       </p>
-      <MyForm />
+      <Main />
     </>
   )
 }
