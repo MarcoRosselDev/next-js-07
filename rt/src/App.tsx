@@ -10,7 +10,55 @@ function App() {
       <p className="mt-3">
         This is some content that will change appearance with the theme.
       </p>
+      <p className="text-danger">
+        {/* visually : visually-hidden
+        * para ser manejados con algun evento como focus o previo a una edicion */}
+        <span className="visually-hidden">Danger: </span>
+        This action is not reversible
+      </p>
+      <a className="visually-hidden-focusable" href="#content">Skip to main content</a>
       <Main />
+      <div className="container text-center">
+        <div className="row gy-5">
+          <div className="col">
+            1 of 3
+          </div>
+          <div className="col-6">
+            2 of 3 (wider)
+          </div>
+          <div className="col">
+            3 of 3
+          </div>
+        </div>
+        <div className="row gy-5">
+          <div className="col">
+            1 of 3
+          </div>
+          <div className="col-5">
+            2 of 3 (wider)
+          </div>
+          <div className="col">
+            3 of 3
+          </div>
+        </div>
+      </div>
+      {/* another one */}
+      <div className="container overflow-hidden text-center">
+        <div className="row gy-5">
+          <div className="col-6">
+            <div className="p-3">Custom column padding</div>
+          </div>
+          <div className="col-6">
+            <div className="p-3">Custom column padding</div>
+          </div>
+          <div className="col-6">
+            <div className="p-3">Custom column padding</div>
+          </div>
+          <div className="col-6">
+            <div className="p-3">Custom column padding</div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
