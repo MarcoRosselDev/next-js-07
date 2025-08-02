@@ -21,7 +21,7 @@ export default function MyForm () {
   }
 
   return (
-    <form onSubmit={handleSubmit} ref={formRef} className="content-xl text-center">
+    <form onSubmit={handleSubmit} ref={formRef} className="content-xl">
       <label className="row justify-content-md-center mb-3">write sometying...
         <input type="text" name="patapin" className="form-control me-2"  />
       </label>
@@ -36,10 +36,14 @@ export default function MyForm () {
       </label>
 
       {/* checkbox aceptar terminos */}
-      <label className="container-fluid d-flex mb-3">
+      {/* <label className="container-fluid d-flex mb-3 form-check-label">
         Aceptar terminos y condiciones
-        <input type="checkbox" name="terminos"/>
-      </label>
+        <input type="checkbox" name="terminos" className="form-check-input"/>
+      </label> */}
+      <div className="mb-3 form-check">
+        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+      </div>
 
       <label className="row justify-content-md-center mb-3">
       <button type="submit" className="btn btn-outline-success">send</button>
