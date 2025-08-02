@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/header/Header'
 import Main from './components/main/Main'
+import Tablas from './components/tablas'
 
 function App() {
 
@@ -59,6 +60,17 @@ function App() {
           </div>
         </div>
       </div>
+      {/* fugure */}
+      <figure className="text-end">
+        <blockquote className="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+        </blockquote>
+        <figcaption className="blockquote-footer">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+        </figcaption>
+      </figure>
+
+      <Tablas />
     </>
   )
 }
