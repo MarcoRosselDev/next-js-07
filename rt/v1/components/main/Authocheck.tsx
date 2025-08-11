@@ -5,13 +5,12 @@ export default function Check() {
   const handleSend = (e: FormEvent) => {
     e.preventDefault()
     console.log("hola");
-    
   }
 
   return (
     <form onSubmit={handleSend} className="row g-3 needs-validation" noValidate>
       <div className="col-md-4">
-        <label htmlFor="validationCustom01" className="form-label">First name</label>
+        <label htmlFor="validationCustom01" className="form-label">First name</label> 
         <input type="text" className="form-control" id="validationCustom01" value="Mark" required/>
         <div className="valid-feedback">
           Looks good!
