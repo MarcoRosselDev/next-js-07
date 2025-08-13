@@ -14,11 +14,7 @@ export default function Form_no_controlado() {
     const color = formData.get("color");
     const accept = !!formData.get("accept"); // Convert to boolean
 
-    console.log({
-      username,
-      color,
-      accept,
-    });
+    console.log({username,color,accept});
   }
 
   return (
