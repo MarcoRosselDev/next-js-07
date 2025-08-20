@@ -64,10 +64,11 @@ const FormA = () => {
           <select 
           className={`form-select ${blur.favColor && (favColor === ""? "is-invalid": "is-valid")}`} 
           aria-label="Default select example"
+          value={favColor}
           onChange={(event) => setFavColor(event.target.value)}
           onBlur={() => handlerBlur("favColor")}
           >
-            <option disabled>Open this select menu</option>
+            <option value="" disabled>Open this select menu</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
