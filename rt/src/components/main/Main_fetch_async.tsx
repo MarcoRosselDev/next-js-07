@@ -1,35 +1,20 @@
-import { useEffect, useState } from "react"
+import {useFetchS} from "../../hooks/useFetch_async"
 
 type MyData = {
-userId : number
-id: number
-title: string
-completed: boolean
+  userId : number
+  id: number
+  title: string
+  completed: boolean
 }
 
-const useFetch = async (setData:(d:MyData)=>void, setError: ()=> void) => {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos/2")
-    if (response.ok) {
-      const json : MyData = await response.json()
-      setData(json)
-    }
-    throw new Error("404 not found")
-  } catch (e) {
-    if(e instanceof Error) setError()
-  }
 
-}
 
 const Main_fetch_async = () => {
+  const {data, loading, error} = useFetchS<MyData>("https://jsonplaceholder.typicode.com/todos/4")
 
-  const [error, setError] = useState<null| string>(null)
-  const [data, setData] = useState<null| MyData>(null)
-  const [loading, setLoading] = useState(true)
+  //"https://jsonplaceholder.typicode.com/todos/2"
 
-  useEffect(() => {
-    useFetch(setData, setError)
-  },[])
+  if (loading) return <p>loading...</p>
 
   return (
     <div>
