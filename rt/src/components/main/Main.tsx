@@ -1,20 +1,21 @@
-import { useState } from "react";
-import Modal from "../Modal.tsx";
+import useFetchTx from "../../hooks/useFetchTx"
+
+type Tx = {
+  userId : number
+  id: number
+  title: string
+  completed: boolean
+}
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
+  const {data, loading, error} = useFetchTx<Tx>("https://jsonplaceholder.typicode.com/todos/3")
+  
+  if (loading) return <p>loading...</p>
+  
   return (
     <div className="container mx-auto">
-      <h1>useEffect</h1>
-      <button
-        className={`btn btn-${!isOpen ? "success" : "warning"}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {!isOpen ? "Abrir" : "Cerrar"} modal
-      </button>
-
-      <div className="my-5">{isOpen && <Modal />}</div>
+      {error? (<p>{error}</p>): <pre>{JSON.stringify(data, null, 2)}</pre>}
     </div>
   );
 };
