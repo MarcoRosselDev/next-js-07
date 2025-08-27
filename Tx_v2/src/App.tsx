@@ -1,19 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import H from './components/header/H'
+import Ucf from './components/forms/Ucf';
+import Cf from './components/forms/Cf';
 
 function App() {
 
   return (
-    <>
+    <div className='container mx-auto justify-content-center mb-3'>
       <H />
       <h1>Goals</h1>
       <p>I would like to rebuild the controlled and uncontrolled forms, by building them again</p>
       <p>Then, I would like to work with the fetch API again, and practice all from scratch</p>
       <p>Finally, build a custom Hook for that fetch funcionality.</p>
-      {/* Controlled Form */}
       {/* Uncontrolled Form */}
+      <Ucf />
+      {/* Controlled Form */}
+      <Cf />
       {/* Fetch */}
-    </>
+    </div>
   )
 }
 
