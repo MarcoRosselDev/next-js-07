@@ -1,7 +1,7 @@
 import Tb from "./Tb";
 const H = () => {
 return (
-  <header className="container-sm">
+  <header className="mb-2 mt-5">
     <Tb />
   </header>
 )}
