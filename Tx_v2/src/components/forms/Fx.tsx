@@ -1,4 +1,4 @@
-import FxHook from "./FxHook"
+import FxHook from "../../hooks/FxHook"
 
 type Z = {
   userId : number

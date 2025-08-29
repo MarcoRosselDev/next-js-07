@@ -1,7 +1,7 @@
 import Tb from "./Tb";
 const H = () => {
 return (
-  <header className="mb-2 mt-5">
+  <header className="mt-3 mb-2">
     <Tb />
   </header>
 )}
