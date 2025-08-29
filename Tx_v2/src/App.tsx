@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import H from './components/header/H'
 import { useState } from 'react';
 import Forms from './components/forms/Forms';
+import PokeAPI from './components/PokeAPI/PokeAPI';
+import Next from './components/Next/Next';
 
 function App() {
 
@@ -28,7 +30,7 @@ function App() {
       </div>
       <div className='container-fluid'>
         <h1>{content} content</h1>
-        {content === "forms"? <Forms /> : "holam mundo"}
+        {content === "forms"? <Forms /> : content === "pokeAPI" ? <PokeAPI /> : <Next />}
       </div>
     </div>
   )
