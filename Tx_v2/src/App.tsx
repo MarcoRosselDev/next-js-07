@@ -8,7 +8,7 @@ import Next from './components/Next/Next';
 
 function App() {
 
-  const [content, setContent] = useState<OptionType>("forms")
+  const [content, setContent] = useState<OptionType>("pokeAPI")
 
   function handleContent(n:OptionType) {
     setContent(n)
