@@ -1,1 +1,1 @@
-export type OptionType = "forms" | "pokeAPI" | "next"
+export type OptionType = "forms" | "pokeAPI" | "next" | "context"

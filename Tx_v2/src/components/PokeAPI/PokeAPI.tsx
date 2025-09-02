@@ -65,11 +65,6 @@ const PokeAPI = () => {
         <button className="btn btn-primary" onClick={() => handler_player()}>show pokemon</button>
       </div>
       {playing && (result ? <p>ganaste</p>:  <p>perdiste</p>)}
-      {/* {err ? <p>{err}</p>: <pre>{JSON.stringify(d, null, 2)}</pre>} */}
-      {/* fetch api */}
-      {/* select the image to print just the shadow of the pokemon */}
-      {/* then whit a button and input look if match the name */}
-      {/* optional: add a count of wining and lusing matches */}
     </div>
   )
 }

@@ -5,10 +5,11 @@ import { useState } from 'react';
 import Forms from './components/forms/Forms';
 import PokeAPI from './components/PokeAPI/PokeAPI';
 import Next from './components/Next/Next';
+import Context from './components/Context/Context';
 
 function App() {
 
-  const [content, setContent] = useState<OptionType>("pokeAPI")
+  const [content, setContent] = useState<OptionType>("context")
 
   function handleContent(n:OptionType) {
     setContent(n)
@@ -27,10 +28,11 @@ function App() {
         <ContentButton n="forms" />
         <ContentButton n="pokeAPI" />
         <ContentButton n="next" />
+        <ContentButton n="context" />
       </div>
       <div className='container-fluid'>
         <h1>{content} content</h1>
-        {content === "forms"? <Forms /> : content === "pokeAPI" ? <PokeAPI /> : <Next />}
+        {content === "forms"? <Forms /> : content === "pokeAPI" ? <PokeAPI /> : content === "context"? <Context /> : <Next /> }
       </div>
     </div>
   )
