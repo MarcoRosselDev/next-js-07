@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Card from "./Card"
 import formatTime from "../utils/formatTime"
+import mp3 from "../assets/audio.mp3"
 
 type Session = "count" | "break"
 
@@ -8,22 +9,31 @@ const Timer = () => {
   //const [timer, setTimer] = useState(count * 60)
 
   const [count, setCount] = useState(10) // 25 minutos * 60 segundos = 1500
-  const [myBreak, setBreak] = useState(5) // 25 minutos * 60 segundos = 1500
+  const [myBreak, setBreak] = useState(10) // 25 minutos * 60 segundos = 1500
   const [session, setSession] = useState<Session>("count")
   const [stop, setStop] = useState(true)
   const timeFormatedCount = formatTime(count)
   const timeFormatedBreak = formatTime(myBreak)
+  
+  const audio = useMemo(() => new Audio(mp3), []); 
 
   useEffect(() => {
+    //const audio = new Audio("./countdown.mp3");
+    audio.currentTime = 0
     const intervalId = setInterval(() => {
     if (stop) {
       return () => clearInterval(intervalId);
     }
     if (count <= 0) {
       setSession("break")
+      audio.play();
+      audio.currentTime = 0
     }
     if (myBreak <= 0) {
+      audio.play();
+      audio.currentTime = 0
       setStop(true)
+      return () => clearInterval(intervalId);
       // do more staf
     }
     if (session === "count") {
@@ -36,7 +46,7 @@ const Timer = () => {
 
     // Limpia el intervalo cuando el componente se desmonta
     return () => clearInterval(intervalId);
-  }, [stop, session, count, myBreak]);
+  }, [stop, session, count, myBreak, audio]);
   
   const handlePause = () => {
     setStop(true)
@@ -46,14 +56,21 @@ const Timer = () => {
     setStop(false)
   }
 
+  const handleReset = () => {
+    setCount(10)
+    setBreak(5)
+    setSession("count")
+    handlePause()
+  }
+
   return (
     <Card>
       <div id="timer-label" className="card-body">
-        <p className='card-text'>Break Length</p>
+        <p className='card-text'>{session === "count"? "Session" : "break session"}</p>
         <p className="card-text">{session === "count" ? timeFormatedCount : timeFormatedBreak}</p>
         <button onClick={handlePlay} >play</button>
         <button onClick={handlePause}>pause</button>
-        <button onClick={() => setCount(25*60)}>reset</button>
+        <button onClick={handleReset}>reset</button>
       </div>
     </Card>
   )
