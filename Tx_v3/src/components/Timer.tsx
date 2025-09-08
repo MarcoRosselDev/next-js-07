@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import Card from "./Card"
 import formatTime from "../utils/formatTime"
 import mp3 from "../assets/audio.mp3"
@@ -8,34 +8,56 @@ type Session = "count" | "break"
 const Timer = () => {
   //const [timer, setTimer] = useState(count * 60)
 
-  const [count, setCount] = useState(10) // 25 minutos * 60 segundos = 1500
+  const [count, setCount] = useState(6) // 25 minutos * 60 segundos = 1500
   const [myBreak, setBreak] = useState(10) // 25 minutos * 60 segundos = 1500
   const [session, setSession] = useState<Session>("count")
   const [stop, setStop] = useState(true)
   const timeFormatedCount = formatTime(count)
   const timeFormatedBreak = formatTime(myBreak)
   
-  const audio = useMemo(() => new Audio(mp3), []); 
+  //const audio = useMemo(() => new Audio(mp3), []); 
 
   useEffect(() => {
-    //const audio = new Audio("./countdown.mp3");
+    const audio = new Audio(mp3);
     audio.currentTime = 0
     const intervalId = setInterval(() => {
     if (stop) {
       return () => clearInterval(intervalId);
     }
-    if (count <= 0) {
+    console.log({
+      session,count, myBreak
+    });
+    if (count === 0) {
+      setCount(prevCount => prevCount - 1)
+      console.log("cero");
       setSession("break")
-      audio.play();
+      audio.play()
       audio.currentTime = 0
+      return () => clearInterval(intervalId);
     }
-    if (myBreak <= 0) {
+    if (myBreak === 0) {
+      console.log("cero break");
+      audio.play()
+      audio.currentTime = 0
+      setStop(true)
+      //setBreak(prevCout => prevCout - 1)
+      return () => clearInterval(intervalId);
+    }
+/*     if (myBreak <= 0) {
       audio.play();
       audio.currentTime = 0
       setStop(true)
       return () => clearInterval(intervalId);
       // do more staf
-    }
+    } */
+
+    /* if (count === 0) {
+      setSession("break")
+      audio.play();
+      audio.currentTime = 0
+      return () => clearInterval(intervalId);
+    } */
+    
     if (session === "count") {
       setCount(prevCount => prevCount - 1); // Usa la forma funcional para obtener el estado anterior
     } 
@@ -46,7 +68,7 @@ const Timer = () => {
 
     // Limpia el intervalo cuando el componente se desmonta
     return () => clearInterval(intervalId);
-  }, [stop, session, count, myBreak, audio]);
+  }, [stop, session, count, myBreak]);
   
   const handlePause = () => {
     setStop(true)
