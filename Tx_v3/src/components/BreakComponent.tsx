@@ -1,12 +1,11 @@
 import { useState } from "react"
-import type { SessionProps } from "../types/SessionProps"
 import Card from "./Card"
+import type { BreakProps } from "../types/BreakProps"
 import formatTime from "../utils/formatTime"
 
-
-const Session = ({ handleUp, handleDown, count, stop}: SessionProps) => {
-
-  const [mystate, setmystate] = useState(count)
+const BreakComponent = ({ handleUp, handleDown, myBreak, stop}: BreakProps) => {
+  
+  const [mystate, setmystate] = useState(myBreak)
   const myStateFormated = formatTime(mystate)
 
   return (
@@ -15,11 +14,11 @@ const Session = ({ handleUp, handleDown, count, stop}: SessionProps) => {
       <div className="row align-items-center">
         <button className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} onClick={() => {
           setmystate(prev => prev + 60)
-          handleUp("count")
+          handleUp("break")
         }}>up</button>
         <p className="card-text col">{myStateFormated}</p>
         <button className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} onClick={() => {
-          handleDown("count")
+          handleDown("break")
           setmystate(prev => prev - 60)
         }}>down</button>
       </div>
@@ -27,4 +26,4 @@ const Session = ({ handleUp, handleDown, count, stop}: SessionProps) => {
     </Card>
   )
 }
-export default Session
+export default BreakComponent

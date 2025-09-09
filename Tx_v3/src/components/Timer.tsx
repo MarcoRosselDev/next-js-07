@@ -2,20 +2,18 @@ import { useEffect, useState } from "react"
 import Card from "./Card"
 import formatTime from "../utils/formatTime"
 import mp3 from "../assets/audio.mp3"
-
-type Session = "count" | "break"
+import type { SessionType } from "../types/SessionType"
+import Session from "./Session"
+import BreakComponent from "./BreakComponent"
 
 const Timer = () => {
-  //const [timer, setTimer] = useState(count * 60)
 
   const [count, setCount] = useState(6) // 25 minutos * 60 segundos = 1500
   const [myBreak, setBreak] = useState(10) // 25 minutos * 60 segundos = 1500
-  const [session, setSession] = useState<Session>("count")
+  const [session, setSession] = useState<SessionType>("count")
   const [stop, setStop] = useState(true)
   const timeFormatedCount = formatTime(count)
   const timeFormatedBreak = formatTime(myBreak)
-  
-  //const audio = useMemo(() => new Audio(mp3), []); 
 
   useEffect(() => {
     const audio = new Audio(mp3);
@@ -43,20 +41,6 @@ const Timer = () => {
       //setBreak(prevCout => prevCout - 1)
       return () => clearInterval(intervalId);
     }
-/*     if (myBreak <= 0) {
-      audio.play();
-      audio.currentTime = 0
-      setStop(true)
-      return () => clearInterval(intervalId);
-      // do more staf
-    } */
-
-    /* if (count === 0) {
-      setSession("break")
-      audio.play();
-      audio.currentTime = 0
-      return () => clearInterval(intervalId);
-    } */
     
     if (session === "count") {
       setCount(prevCount => prevCount - 1); // Usa la forma funcional para obtener el estado anterior
@@ -85,16 +69,50 @@ const Timer = () => {
     handlePause()
   }
 
+ const handleUp = (time:SessionType) => {
+  if (time === "break") {
+    setBreak(prev => prev + 60)
+  }
+  if (time === "count") {
+    setCount(prev => prev + 60)
+  }
+    
+ }
+ const handleDown = (time : SessionType) => {
+
+  if (count <= 0 || myBreak <= 0) {
+    return
+  }
+  if (time === "break") {
+    setBreak(prev => prev - 60)
+  }
+  if (time === "count") {
+    setCount(prev => prev - 60)
+  }
+ }
+
   return (
+    <>
+    <div className="row align-items-center">
+      <Card>
+        <p className='card-text'>Session</p>
+        <Session count={count} handleDown={handleDown} handleUp={handleUp} stop={stop}/>
+      </Card>
+      <Card>
+        <p className='card-text'>break</p>
+        <BreakComponent myBreak={myBreak} handleDown={handleDown} handleUp={handleUp} stop={stop}/>
+      </Card>
+    </div>
     <Card>
       <div id="timer-label" className="card-body">
         <p className='card-text'>{session === "count"? "Session" : "break session"}</p>
         <p className="card-text">{session === "count" ? timeFormatedCount : timeFormatedBreak}</p>
-        <button onClick={handlePlay} >play</button>
-        <button onClick={handlePause}>pause</button>
-        <button onClick={handleReset}>reset</button>
+        <button className="btn btn-primary" onClick={handlePlay} >play</button>
+        <button className="btn btn-primary" onClick={handlePause}>pause</button>
+        <button className="btn btn-primary" onClick={handleReset}>reset</button>
       </div>
     </Card>
+    </>
   )
 }
 export default Timer
