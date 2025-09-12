@@ -8,12 +8,14 @@ import BreakComponent from "./BreakComponent"
 
 const Timer = () => {
 
-  const [count, setCount] = useState(6) // 25 minutos * 60 segundos = 1500
-  const [myBreak, setBreak] = useState(10) // 25 minutos * 60 segundos = 1500
+  const [count, setCount] = useState(25*60) // 25 minutos * 60 segundos = 1500
+  const [myBreak, setBreak] = useState(5*60) // 25 minutos * 60 segundos = 1500
   const [session, setSession] = useState<SessionType>("count")
   const [stop, setStop] = useState(true)
   const timeFormatedCount = formatTime(count)
   const timeFormatedBreak = formatTime(myBreak)
+  const [localSession, setLocalSession] = useState(25*60)
+  const [localBreak, setLocalBreak] = useState(5*60)
 
   useEffect(() => {
     const audio = new Audio(mp3);
@@ -22,7 +24,7 @@ const Timer = () => {
     if (stop) {
       return () => clearInterval(intervalId);
     }
-    if (count <= 0) {
+    if (count < 0) {
       setCount(0)
       console.log("cero");
       setSession("break")
@@ -30,8 +32,9 @@ const Timer = () => {
       audio.currentTime = 0
       return () => clearInterval(intervalId);
     }
-    if (myBreak <= 0) {
+    if (myBreak < 0) {
       console.log("cero break");
+      setBreak(0)
       audio.play()
       audio.currentTime = 0
       setStop(true)
@@ -60,62 +63,25 @@ const Timer = () => {
 
   const handleReset = () => {
     // mojorar esto
-    setCount(10)
-    setBreak(5)
+    setCount(25*60)
+    setBreak(5*60)
+    setLocalSession(25*60)
+    setLocalBreak(5*60)
     setSession("count")
     handlePause()
   }
 
- const handleUp = (time:SessionType) => {
-  if (time === "break") {
-    setBreak(prev => {
-      if (myBreak < 60 || myBreak == 0) {
-        return 60
-      }
-      const modulo = myBreak % 60
-      if (modulo != 0) {
-        return Math.round(myBreak/60) + 60
-      }
-      return prev + 60
-    })
-  }
-  if (time === "count") {
-    setCount(prev => {
-      if (count < 60 || count == 0) {
-        return 60
-      }
-      const modulo = count % 60        
-      if (modulo != 0) {
-        return Math.round(count/60) + 60
-      }
-      return prev + 60
-    })
-  }
-    
- }
- const handleDown = (time : SessionType) => {
-
-  /* if (count <= 0 || myBreak <= 0) {
-    return
-  } */
-  if (time === "break") {
-    setBreak(prev => prev - 60)
-  }
-  if (time === "count") {
-    setCount(prev => prev - 60)
-  }
- }
 
   return (
     <>
     <div className="row align-items-center">
       <Card>
         <p className='card-text'>Session</p>
-        <Session count={count} handleDown={handleDown} handleUp={handleUp} stop={stop}/>
+        <Session setCount={setCount} stop={stop} localSession={localSession} setLocalSession={setLocalSession} />
       </Card>
       <Card>
         <p className='card-text'>break</p>
-        <BreakComponent myBreak={myBreak} handleDown={handleDown} handleUp={handleUp} stop={stop}/>
+        <BreakComponent setBreak={setBreak} stop={stop} localBreak={localBreak} setLocalBreak={setLocalBreak} />
       </Card>
     </div>
     <Card>
