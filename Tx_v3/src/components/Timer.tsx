@@ -22,23 +22,19 @@ const Timer = () => {
     if (stop) {
       return () => clearInterval(intervalId);
     }
-    console.log({
-      session,count, myBreak
-    });
-    if (count === 0) {
-      setCount(prevCount => prevCount - 1)
+    if (count <= 0) {
+      setCount(0)
       console.log("cero");
       setSession("break")
       audio.play()
       audio.currentTime = 0
       return () => clearInterval(intervalId);
     }
-    if (myBreak === 0) {
+    if (myBreak <= 0) {
       console.log("cero break");
       audio.play()
       audio.currentTime = 0
       setStop(true)
-      //setBreak(prevCout => prevCout - 1)
       return () => clearInterval(intervalId);
     }
     
@@ -63,6 +59,7 @@ const Timer = () => {
   }
 
   const handleReset = () => {
+    // mojorar esto
     setCount(10)
     setBreak(5)
     setSession("count")
@@ -71,18 +68,36 @@ const Timer = () => {
 
  const handleUp = (time:SessionType) => {
   if (time === "break") {
-    setBreak(prev => prev + 60)
+    setBreak(prev => {
+      if (myBreak < 60 || myBreak == 0) {
+        return 60
+      }
+      const modulo = myBreak % 60
+      if (modulo != 0) {
+        return Math.round(myBreak/60) + 60
+      }
+      return prev + 60
+    })
   }
   if (time === "count") {
-    setCount(prev => prev + 60)
+    setCount(prev => {
+      if (count < 60 || count == 0) {
+        return 60
+      }
+      const modulo = count % 60        
+      if (modulo != 0) {
+        return Math.round(count/60) + 60
+      }
+      return prev + 60
+    })
   }
     
  }
  const handleDown = (time : SessionType) => {
 
-  if (count <= 0 || myBreak <= 0) {
+  /* if (count <= 0 || myBreak <= 0) {
     return
-  }
+  } */
   if (time === "break") {
     setBreak(prev => prev - 60)
   }
