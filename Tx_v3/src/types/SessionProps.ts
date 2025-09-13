@@ -8,4 +8,5 @@ export type SessionProps = {
   localSession: number
   setLocalSession: Dispatch<SetStateAction<number>>
   setCount: Dispatch<SetStateAction<number>>
+  count: number
 }

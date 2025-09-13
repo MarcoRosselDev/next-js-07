@@ -8,4 +8,5 @@ export type BreakProps = {
   localBreak: number
   setBreak: Dispatch<SetStateAction<number>>
   setLocalBreak: Dispatch<SetStateAction<number>>
+  myBreak: number
 }

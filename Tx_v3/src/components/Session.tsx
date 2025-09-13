@@ -1,63 +1,84 @@
 //import { useState } from "react"
 import type { SessionProps } from "../types/SessionProps"
 import Card from "./Card"
-import formatTime from "../utils/formatTime"
+//import formatTime from "../utils/formatTime"
 
 
-const Session = ({ stop , localSession, setLocalSession, setCount}: SessionProps) => {
+const Session = ({ stop , localSession, setLocalSession, setCount, count}: SessionProps) => {
 
   //const [localSession, setLocalSession] = useState(count)
-  const myStateFormated = formatTime(localSession)
+  //const myStateFormated = formatTime(localSession)
 
-    const handleUpLocal = () => {
-      setLocalSession(prev => {
-        if (localSession < 60 || localSession == 0) {
-          return 60
-        }
-        const modulo = localSession % 60        
-        if (modulo != 0) {
-          return Math.round(localSession/60) + 60
-        }
-        return prev + 60
-      })
-      
-      setCount(localSession + 60)
+  const handleUpLocal = () => {
+    // si es menor o igual a 0 actualizar a 1
+    if (count < 60 || count == 0) {
+      setLocalSession(1)
+      setCount(60)
+      return
     }
-
-    const handleDownLocal = () => {
-      setLocalSession(prev => {
-        if (localSession < 60 || localSession == 0) {
-          return 0
-        }
-        const modulo = localSession % 60        
-        if (modulo != 0) {
-          return Math.round(localSession/60) - 60
-        }
-        return prev - 60
-      })
-      
-      console.log(localSession);
-      if (localSession <= 60) {
-        return setCount(0)
+    const modulo = count % 60
+    if (modulo != 0) {
+      if (localSession >= 60) {
+        setLocalSession(60)
+        setCount(60*60)
+        return
       }
-      setCount(localSession - 60)
+      setLocalSession(localSession + 1)
+      setCount(Math.round(localSession*60) + 60)
+      return
     }
+    if (localSession >= 60) {
+      setLocalSession(60)
+      setCount(60*60)
+      return
+    }
+    setLocalSession(localSession + 1)
+    setCount(localSession*60 + 60)
+  }
+
+  const handleDownLocal = () => {
+
+    if (localSession <= 1) {
+      setLocalSession(1)
+      setCount(60)
+      return
+    }
+
+    if (count < 60 || count == 0) {
+      setLocalSession(1)
+      setCount(60)
+      return
+    }
+    const modulo = count % 60
+    if (modulo != 0) {
+      setLocalSession(localSession - 1)
+      setCount(Math.round(localSession*60) - 60)
+      return
+    }
+    setLocalSession(localSession - 1)
+    setCount(localSession*60 - 60)
+  }
   return (
     <Card>
       <div className="container text-center">
-      <div className="row align-items-center">
-        <button className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} onClick={() => {
-          //setmystate(prev => prev + 60)
-          //handleUp("count")
-          handleUpLocal()
-        }}>up</button>
-        <p className="card-text col">{myStateFormated}</p>
-        <button className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} onClick={() => {
-          //handleDown("count")
-          handleDownLocal()
-          //setmystate(prev => prev - 60)
-        }}>down</button>
-      </div>
+        <p id="session-label">Session Length</p>
+        <div className="row align-items-center">
+
+          <button 
+            className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} 
+            onClick={() => handleUpLocal()}
+            id="session-increment"
+            >up</button>
+          
+          <p className="card-text col " id="session-length">{localSession}</p>
+
+          <button 
+            className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} 
+            onClick={() =>handleDownLocal()}
+            id="session-decrement"
+            >down</button>
+          
+        </div>
       </div>
     </Card>
   )

@@ -14,61 +14,52 @@ const Timer = () => {
   const [stop, setStop] = useState(true)
   const timeFormatedCount = formatTime(count)
   const timeFormatedBreak = formatTime(myBreak)
-  const [localSession, setLocalSession] = useState(25*60)
-  const [localBreak, setLocalBreak] = useState(5*60)
+  const [localSession, setLocalSession] = useState(25)
+  const [localBreak, setLocalBreak] = useState(5)
 
   useEffect(() => {
     const audio = new Audio(mp3);
     audio.currentTime = 0
+    audio.id = "beep"
     const intervalId = setInterval(() => {
     if (stop) {
       return () => clearInterval(intervalId);
     }
-    if (count < 0) {
-      setCount(0)
-      console.log("cero");
+    if (count === 0) {
+      setCount(localSession*60)
       setSession("break")
       audio.play()
       audio.currentTime = 0
       return () => clearInterval(intervalId);
     }
-    if (myBreak < 0) {
-      console.log("cero break");
-      setBreak(0)
+    if (myBreak === 0) {
+      setBreak(localBreak*60)
+      setSession("count")
       audio.play()
       audio.currentTime = 0
-      setStop(true)
       return () => clearInterval(intervalId);
     }
     
-    if (session === "count") {
+    if (session === "count" && count > 0) {
       setCount(prevCount => prevCount - 1); // Usa la forma funcional para obtener el estado anterior
-    } 
-    if (session === "break") {
+    }
+    if (session === "break" && myBreak > 0) {
       setBreak(prevCout => prevCout - 1)
     }
     }, 1000); // Actualiza cada segundo
 
     // Limpia el intervalo cuando el componente se desmonta
     return () => clearInterval(intervalId);
-  }, [stop, session, count, myBreak]);
-  
-  const handlePause = () => {
-    setStop(true)
-  }
-
-  const handlePlay = () => {
-    setStop(false)
-  }
+  }, [stop, session, count, myBreak, localSession, localBreak]);
 
   const handleReset = () => {
     // mojorar esto
     setCount(25*60)
     setBreak(5*60)
-    setLocalSession(25*60)
-    setLocalBreak(5*60)
+    setLocalSession(25)
+    setLocalBreak(5)
     setSession("count")
-    handlePause()
+    setStop(true)
   }
 
 
@@ -76,21 +67,28 @@ const Timer = () => {
     <>
     <div className="row align-items-center">
       <Card>
-        <p className='card-text'>Session</p>
-        <Session setCount={setCount} stop={stop} localSession={localSession} setLocalSession={setLocalSession} />
+        <BreakComponent
+        myBreak={myBreak}
+        setBreak={setBreak} 
+        stop={stop} 
+        localBreak={localBreak} 
+        setLocalBreak={setLocalBreak} />
       </Card>
       <Card>
-        <p className='card-text'>break</p>
-        <BreakComponent setBreak={setBreak} stop={stop} localBreak={localBreak} setLocalBreak={setLocalBreak} />
+        <Session
+        count={count} 
+        setCount={setCount} 
+        stop={stop} 
+        localSession={localSession} 
+        setLocalSession={setLocalSession} />
       </Card>
     </div>
     <Card>
-      <div id="timer-label" className="card-body">
-        <p className='card-text'>{session === "count"? "Session" : "break session"}</p>
-        <p className="card-text">{session === "count" ? timeFormatedCount : timeFormatedBreak}</p>
-        <button className="btn btn-primary" onClick={handlePlay} >play</button>
-        <button className="btn btn-primary" onClick={handlePause}>pause</button>
-        <button className="btn btn-primary" onClick={handleReset}>reset</button>
+      <div className="card-body">
+        <p id="timer-label" className='card-text'>{session === "count"? "Session" : "Break"}</p>
+        <p id="time-left" className="card-text">{session === "count" ? timeFormatedCount : timeFormatedBreak}</p>
+        <button className="btn btn-primary" id="start_stop" onClick={() => setStop(prev => !prev)} >play or pause</button>
+        <button className="btn btn-primary" id="reset" onClick={handleReset}>reset</button>
       </div>
     </Card>
     </>

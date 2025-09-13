@@ -1,58 +1,82 @@
 //import { useState } from "react"
 import Card from "./Card"
 import type { BreakProps } from "../types/BreakProps"
-import formatTime from "../utils/formatTime"
+//import formatTime from "../utils/formatTime"
 
-const BreakComponent = ({ setBreak, stop, localBreak, setLocalBreak}: BreakProps) => {
+const BreakComponent = ({ setBreak, stop, localBreak, setLocalBreak, myBreak}: BreakProps) => {
   
   //const [localBreak, setmystate] = useState(myBreak)
-  const myStateFormated = formatTime(localBreak)
+  //const myStateFormated = formatTime(localBreak)
 
   const handleUpLocal = () => {
-  setLocalBreak(prev => {
-    if (localBreak < 60 || localBreak == 0) {
-      return 60
+    if (myBreak < 60 || myBreak == 0) {
+      setLocalBreak(1)
+      setBreak(60)
+      return
     }
-    const modulo = localBreak % 60        
+    const modulo = myBreak % 60
     if (modulo != 0) {
-      return Math.round(localBreak/60) + 60
+      if (localBreak >= 60) {
+        setLocalBreak(60)
+        setBreak(60*60)
+        return
+      }
+      setLocalBreak(localBreak + 1)
+      setBreak(Math.round(localBreak*60) + 60)
+      return
     }
-    return prev + 60
-  })
-  setBreak(localBreak + 60)
-}
+    if (localBreak >= 60) {
+      setLocalBreak(60)
+      setBreak(60*60)
+      return
+    }
+    setLocalBreak(localBreak + 1)
+    setBreak(localBreak*60 + 60)
+  }
 
 const handleDownLocal = () => {
-  setLocalBreak(prev => {
-    if (localBreak < 60 || localBreak == 0) {
-      return 0
-    }
-    const modulo = localBreak % 60        
-    if (modulo != 0) {
-      return Math.round(localBreak/60) - 60
-    }
-    return prev - 60
-  })
+  if (localBreak <= 1) {
+    setLocalBreak(1)
+    setBreak(60)
+    return
+  }
 
-  if (localBreak <= 60) {
-      return setBreak(0)
-    }
-  setBreak(localBreak - 60)
+  if (myBreak < 60 || myBreak == 0) {
+    setLocalBreak(1)
+    setBreak(60)
+    return
+  }
+  const modulo = myBreak % 60
+  if (modulo != 0) {
+    setLocalBreak(localBreak - 1)
+    setBreak(Math.round(localBreak*60) - 60)
+    return
+  }
+  setLocalBreak(localBreak - 1)
+  setBreak(localBreak*60 - 60)
 }
 
   return (
     <Card>
-      <div className="container text-center">
-      <div className="row align-items-center">
-        <button className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} onClick={() => {          
-          handleUpLocal()
+      <div className="container text-center" id="break-label">
+        <p id="break-label">Break Length</p>
+        <div className="row align-items-center">
 
-        }}>up</button>
-        <p className="card-text col">{myStateFormated}</p>
-        <button className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} onClick={() => {
-          handleDownLocal()
-        }}>down</button>
-      </div>
+          <button 
+            className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} 
+            onClick={() => handleUpLocal()}
+            id="break-increment"
+            >up</button>
+
+          <p className="card-text col" id="break-length">{localBreak}</p>
+          
+          <button 
+            className={`btn btn-outline-primary col ${stop? "" : "disabled"}`} 
+            onClick={() => handleDownLocal()}
+            id="break-decrement"
+            >down</button>
+        
+        </div>
       </div>
     </Card>
   )
